@@ -1,0 +1,78 @@
+@import '../../variables.sass'
+
+.ByteInput
+  cursor: text
+  margin: 18px 0 10px 0
+  padding: 0 16px
+  min-height: 42px
+  min-width: 260px
+  transition: 0.2s all ease-in-out
+  width: max-content
+  box-sizing: border-box
+  position: relative
+  font-weight: bold
+  display: flex
+  align-items: center
+  &:hover:not([disabled])
+    .BytePlaceholder
+      transform: translate3d(0px, 0, 0)
+  &:focus-within:not([disabled])
+    .BytePlaceholder
+      transform: translate3d(0px, 0, 0)
+  input
+    color: rgba($text, 0.8)
+    font-size: $input-font-size
+    background: transparent
+    border: 0
+    outline: 0
+    width: 100%
+    &::selection
+      background: $primary
+      color: $white
+    &::placeholder
+      color: $input-placeholder
+      user-select: none
+
+.ByteInputBorder
+  border: 1px solid $input-border
+  &:focus-within:not([disabled])
+    border: 1px solid $primary
+    -webkit-box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+    -moz-box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+    box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+
+.ByteInputLine
+  border-bottom: 1px solid $input-border
+  &:focus-within:not([disabled])
+    border-bottom: 1px solid $primary
+
+.ByteInputSolid
+  background: rgba($input-solid, 0.6)
+  border: 1.1px solid $input-border
+  &:focus-within:not([disabled])
+    background: rgba($input-solid, 1)
+
+.ByteInputDisabled
+  background: $disabled
+  color: $disabled-text
+  cursor: default
+
+.ByteInputText
+  transition: 0.2s all ease-in-out
+
+.BytePlaceholder
+  color: $input-placeholder
+  user-select: none
+  position: absolute
+  font-size: $input-font-size
+  transform: translate3d(-3px, 0, 0)    
+
+.ByteLabel
+  color: $text
+  user-select: none
+  position: absolute
+  transform: translate3d(-18px, -32px, 0)
+  font-size: 14px
+  
+.ByteHide
+  display: none

@@ -1,0 +1,28 @@
+@import '../../variables.sass'
+
+.ByteAvatar
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: hidden
+  img.ByteImage
+    object-fit: cover
+    background-size: cover
+    width: 100%
+    height: 100%
+    box-sizing: border-box
+  .ByteDefaultAvatar
+    padding: 6px
+  .BytePrimaryBackground
+    background: $primary
+  .ByteAvatarText
+    width: 100%
+    height: 100%
+    color: white
+    display: flex
+    align-items: center
+    justify-content: center
+    text-transform: uppercase
+
+.ByteHidden
+  display: none

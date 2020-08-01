@@ -1,0 +1,120 @@
+@import '../../variables.sass'
+
+.ByteButton
+  border-radius: 4px
+  padding: 0 16px
+  min-height: 42px
+  min-width: 64px
+  font-weight: bold
+  box-sizing: content-box
+  display: flex
+  align-items: center
+  justify-content: center
+  border: 0
+  outline: 0
+  position: relative
+  font-size: $button-font-size
+  -webkit-box-shadow: 0px 0px 0px 4px rgba(0,0,0,0)
+  -moz-box-shadow: 0px 0px 0px 4px rgba(0,0,0,0)
+  box-shadow: 0px 0px 0px 4px rgba(0,0,0,0)
+  cursor: pointer
+  transition: 0.2s all ease-in-out
+  &:disabled
+    background: $disabled
+    color: $disabled-text
+    cursor: default
+
+.ByteButtonLoading
+  opacity: 0.5
+  cursor: default
+  background: $primary !important
+  color: $white !important
+  &:hover:not([disabled])
+    -webkit-box-shadow: 0px 8px 8px rgba($primary, 0) !important
+    -moz-box-shadow: 0px 8px 8px rgba($primary, 0) !important
+    box-shadow: 0px 8px 8px rgba($primary, 0) !important
+  &:focus:not([disabled])
+    -webkit-box-shadow: 0px 0px 0px 4px rgba($primary,0) !important
+    -moz-box-shadow: 0px 0px 0px 4px rgba($primary,0) !important
+    box-shadow: 0px 0px 0px 4px rgba($primary,0) !important
+  &:active:not([disabled])
+    background: $primary !important
+
+.ByteButtonRegular
+  background: $primary
+  color: $white
+  &:hover:not([disabled])
+    -webkit-box-shadow: 0px 8px 8px rgba($primary, 0.40)
+    -moz-box-shadow: 0px 8px 8px rgba($primary, 0.40)
+    box-shadow: 0px 8px 8px rgba($primary, 0.40)
+    background: rgba($primary, 0.9)
+  &:focus:not([disabled])
+    background: $primary
+    -webkit-box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+    -moz-box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+    box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+  &:active:not([disabled])
+    background: $primary
+
+.ByteButtonLight
+  background: rgba($primary, 0.1)
+  color: $primary
+  &:hover:not([disabled])
+    -webkit-box-shadow: 0px 8px 8px rgba($primary, 0.5)
+    -moz-box-shadow: 0px 8px 8px rgba($primary, 0.5)
+    box-shadow: 0px 8px 8px rgba($primary, 0.5)
+    background: rgba($primary, 0.15)
+  &:focus:not([disabled])
+    -webkit-box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+    -moz-box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+    box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+  &:active:not([disabled])
+    background: rgba($primary, 0.1)
+
+.ByteButtonRound
+  background: $primary
+  color: $white
+  width: 40px
+  height: 40px
+  display: flex
+  align-items: center
+  justify-content: center
+  &:hover:not([disabled])
+    -webkit-box-shadow: 0px 8px 8px rgba($primary, 0.40)
+    -moz-box-shadow: 0px 8px 8px rgba($primary, 0.40)
+    box-shadow: 0px 8px 8px rgba($primary, 0.40)
+    background: rgba($primary, 0.9)
+  &:focus:not([disabled])
+    background: $primary
+    -webkit-box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+    -moz-box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+    box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+  &:active:not([disabled])
+    background: $primary
+
+.ByteButtonTransparent
+  background: transparent
+  color: $primary
+  &:active:not([disabled])
+    background: rgba($primary,0.1)
+
+.ByteButtonBorder
+  background: transparent
+  color: $primary
+  border: 1px solid $primary
+  &:hover:not([disabled])
+    -webkit-box-shadow: 0px 8px 8px rgba($primary, 0.40)
+    -moz-box-shadow: 0px 8px 8px rgba($primary, 0.40)
+    box-shadow: 0px 8px 8px rgba($primary, 0.40)
+  &:focus:not([disabled])
+    background: $primary
+    color: $white
+    -webkit-box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+    -moz-box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+    box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
+  &:active:not([disabled])
+    color: $white
+    background: $primary
+
+.ByteSpinner
+  margin-left: 12px
