@@ -17,6 +17,12 @@ const App = () => {
         danger={true}
         dangerText='This is required'
       />
+      <Input
+        placeholder='Email'
+        onChange={printInputValue}
+        danger={true}
+        dangerText='This is required'
+      />
       <Avatar />
     </div>
   )

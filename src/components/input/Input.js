@@ -18,6 +18,7 @@ const Input = ({
 }) => {
   const [focus, setFocus] = useState('')
   const [inputVal, setInputVal] = useState(value)
+  const [inputBox, setInputBox] = useState()
   const checkType = (_design) => {
     switch (_design) {
       case 'border':
@@ -57,7 +58,7 @@ const Input = ({
     <div>
       <div
         onClick={() => {
-          document.getElementsByClassName('ByteInnerInput')[0].focus()
+          inputBox.focus()
         }}
         className={`${styles.ByteInput} ${checkType(design)} ${
           disabled && styles.ByteInputDisabled
@@ -81,6 +82,9 @@ const Input = ({
         <input
           {...props}
           value={inputVal}
+          ref={(input) => {
+            setInputBox(input)
+          }}
           onChange={(e) => addInputChange(e)}
           onFocus={(e) => addInputFocus(e)}
           onBlur={(e) => addInputBlur(e)}
