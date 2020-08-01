@@ -14,15 +14,18 @@
   .ByteDefaultAvatar
     padding: 6px
   .BytePrimaryBackground
-    background: $primary
+    background: rgba($primary, 1)
+  .ByteLightPrimaryBackground
+    background: rgba($primary, 0.2)
   .ByteAvatarText
     width: 100%
     height: 100%
-    color: white
+    color: rgba($primary, 1)
+    font-weight: bold
     display: flex
     align-items: center
     justify-content: center
     text-transform: uppercase
 
 .ByteHidden
-  display: none
+  display: none !important

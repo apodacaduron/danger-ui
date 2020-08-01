@@ -24,19 +24,9 @@ const Avatar = ({
         alt={alt}
         onError={() => setImgErrorVal(true)}
         className={`${styles.ByteImage} ${
-          (typeof src === 'undefined' && typeof text === 'undefined') ||
-          imgError
-            ? styles.ByteDefaultAvatar
-            : ''
-        } ${
-          typeof src === 'undefined' ||
-          (imgError && typeof text !== 'undefined')
-            ? styles.ByteHidden
-            : ''
-        } ${
-          typeof src === 'undefined' || (imgError && color === 'primary')
-            ? styles.BytePrimaryBackground
-            : ''
+          (!src || imgError) && text ? styles.ByteHidden : ''
+        } ${(!src || imgError) && !text ? styles.BytePrimaryBackground : ''} ${
+          (!src || imgError) && !text ? styles.ByteDefaultAvatar : ''
         }`}
         style={{
           background:
@@ -47,13 +37,10 @@ const Avatar = ({
       />
       <div
         className={`${styles.ByteAvatarText} ${
-          typeof src !== 'undefined' ||
-          (!imgError && typeof text === 'undefined')
-            ? styles.ByteHidden
-            : ''
-        } ${
+          !text ? styles.ByteHidden : ''
+        } ${src && !imgError ? styles.ByteHidden : ''} ${
           typeof src === 'undefined' || (imgError && color === 'primary')
-            ? styles.BytePrimaryBackground
+            ? styles.ByteLightPrimaryBackground
             : ''
         }`}
         style={{
