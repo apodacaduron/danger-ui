@@ -67,7 +67,11 @@ const Input = ({
       >
         <span
           className={`${
-            focus && animated ? styles.ByteLabel : styles.BytePlaceholder
+            focus && animated
+              ? !danger
+                ? styles.ByteLabel
+                : styles.ByteLabelDanger
+              : styles.BytePlaceholder
           } ${styles.ByteInputText} ${
             !animated && inputVal && styles.ByteHide
           } ${danger && styles.BytePlaceholderDanger}`}
