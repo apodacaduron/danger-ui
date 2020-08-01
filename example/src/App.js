@@ -11,7 +11,12 @@ const App = () => {
       <Button design='regular' onClick={print}>
         Iniciar Sesión
       </Button>
-      <Input placeholder='Email' animated onChange={printInputValue} />
+      <Input
+        placeholder='Email'
+        onChange={printInputValue}
+        danger={true}
+        dangerText='This is required'
+      />
       <Avatar />
     </div>
   )

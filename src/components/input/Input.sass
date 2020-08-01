@@ -2,7 +2,7 @@
 
 .ByteInput
   cursor: text
-  margin: 18px 0 10px 0
+  margin: 18px 0 5px 0
   padding: 0 16px
   min-height: 42px
   min-width: 260px
@@ -65,7 +65,15 @@
   user-select: none
   position: absolute
   font-size: $input-font-size
-  transform: translate3d(-3px, 0, 0)    
+  transform: translate3d(-3px, 0, 0)
+
+.BytePlaceholderDanger
+  color: rgba($danger, 0.6)
+  
+.ByteInputDanger
+  color: $danger
+  background: rgba($danger, 0.3)
+  border-color: rgba($danger, 1)
 
 .ByteLabel
   color: $text
@@ -73,6 +81,12 @@
   position: absolute
   transform: translate3d(-18px, -32px, 0)
   font-size: 14px
-  
+
+.ByteDangerText
+  color: $danger
+
+.ByteInputEventText
+  font-size: 14px
+
 .ByteHide
   display: none

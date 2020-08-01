@@ -12,6 +12,8 @@ const Input = ({
   onChange,
   onFocus,
   onBlur,
+  danger = false,
+  dangerText,
   ...props
 }) => {
   const [focus, setFocus] = useState('')
@@ -30,7 +32,6 @@ const Input = ({
   }
 
   const isFocused = (_focused) => {
-    console.log(inputVal)
     if (_focused) {
       setFocus(_focused)
     } else {
@@ -53,32 +54,43 @@ const Input = ({
   }
 
   return (
-    <div
-      onClick={() => {
-        document.getElementsByClassName('ByteInnerInput')[0].focus()
-      }}
-      className={`${styles.ByteInput} ${checkType(design)} ${
-        disabled && styles.ByteInputDisabled
-      }`}
-      disabled={disabled}
-      style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
-    >
-      <span
-        className={`${
-          focus && animated ? styles.ByteLabel : styles.BytePlaceholder
-        } ${styles.ByteInputText} ${!animated && inputVal && styles.ByteHide}`}
-      >
-        {placeholder}
-      </span>
-      <input
-        {...props}
-        value={inputVal}
-        onChange={(e) => addInputChange(e)}
-        onFocus={(e) => addInputFocus(e)}
-        onBlur={(e) => addInputBlur(e)}
+    <div>
+      <div
+        onClick={() => {
+          document.getElementsByClassName('ByteInnerInput')[0].focus()
+        }}
+        className={`${styles.ByteInput} ${checkType(design)} ${
+          disabled && styles.ByteInputDisabled
+        } ${danger && styles.ByteInputDanger}`}
         disabled={disabled}
-        className='ByteInnerInput'
-      />
+        style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
+      >
+        <span
+          className={`${
+            focus && animated ? styles.ByteLabel : styles.BytePlaceholder
+          } ${styles.ByteInputText} ${
+            !animated && inputVal && styles.ByteHide
+          } ${danger && styles.BytePlaceholderDanger}`}
+        >
+          {placeholder}
+        </span>
+        <input
+          {...props}
+          value={inputVal}
+          onChange={(e) => addInputChange(e)}
+          onFocus={(e) => addInputFocus(e)}
+          onBlur={(e) => addInputBlur(e)}
+          disabled={disabled}
+          className='ByteInnerInput'
+        />
+      </div>
+      <span
+        className={`${styles.ByteDangerText} ${styles.ByteInputEventText} ${
+          !danger && styles.ByteHide
+        }`}
+      >
+        {dangerText}
+      </span>
     </div>
   )
 }
