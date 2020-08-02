@@ -11,6 +11,7 @@ const Button = ({
   radius = 10,
   loading = false,
   onClick,
+  block = false,
   ...props
 }) => {
   const checkType = (_design) => {
@@ -34,9 +35,11 @@ const Button = ({
       onClick={!loading ? onClick : undefined}
       className={`${styles.ByteButton} ${checkType(design)} ${
         loading && styles.ByteButtonLoading
-      }`}
+      } ${block && styles.ByteButtonBlock}`}
       disabled={disabled}
-      style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
+      style={{
+        borderRadius: `${radius > 50 ? 50 : radius}px`
+      }}
     >
       {children}
 

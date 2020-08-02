@@ -13,6 +13,7 @@ const Input = ({
   onFocus,
   onBlur,
   danger = false,
+  block = false,
   dangerText,
   ...props
 }) => {
@@ -62,7 +63,9 @@ const Input = ({
         }}
         className={`${styles.ByteInput} ${checkType(design)} ${
           disabled && styles.ByteInputDisabled
-        } ${danger && styles.ByteInputDanger}`}
+        } ${danger && styles.ByteInputDanger} ${
+          block && styles.ByteInputBlock
+        }`}
         disabled={disabled}
         style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
       >
