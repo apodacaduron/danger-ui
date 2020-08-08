@@ -23,13 +23,13 @@ const Input = ({
   const checkType = (_design) => {
     switch (_design) {
       case 'border':
-        return styles.ByteInputBorder
+        return styles.DangerInputBorder
       case 'line':
-        return styles.ByteInputLine
+        return styles.DangerInputLine
       case 'solid':
-        return styles.ByteInputSolid
+        return styles.DangerInputSolid
       default:
-        return styles.ByteInputBorder
+        return styles.DangerInputBorder
     }
   }
 
@@ -61,10 +61,10 @@ const Input = ({
         onClick={() => {
           inputBox.focus()
         }}
-        className={`${styles.ByteInput} ${checkType(design)} ${
-          disabled && styles.ByteInputDisabled
-        } ${danger && styles.ByteInputDanger} ${
-          block && styles.ByteInputBlock
+        className={`${styles.DangerInput} ${checkType(design)} ${
+          disabled && styles.DangerInputDisabled
+        } ${danger && styles.DangerInputDanger} ${
+          block && styles.DangerInputBlock
         }`}
         disabled={disabled}
         style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
@@ -73,12 +73,12 @@ const Input = ({
           className={`${
             focus && animated
               ? !danger
-                ? styles.ByteLabel
-                : styles.ByteLabelDanger
-              : styles.BytePlaceholder
-          } ${styles.ByteInputText} ${
-            !animated && inputVal && styles.ByteHide
-          } ${danger && styles.BytePlaceholderDanger}`}
+                ? styles.DangerLabel
+                : styles.DangerLabelDanger
+              : styles.DangerPlaceholder
+          } ${styles.DangerInputText} ${
+            !animated && inputVal && styles.DangerHide
+          } ${danger && styles.DangerPlaceholderDanger}`}
         >
           {placeholder}
         </span>
@@ -92,12 +92,12 @@ const Input = ({
           onFocus={(e) => addInputFocus(e)}
           onBlur={(e) => addInputBlur(e)}
           disabled={disabled}
-          className='ByteInnerInput'
+          className='DangerInnerInput'
         />
       </div>
       <span
-        className={`${styles.ByteDangerText} ${styles.ByteInputEventText} ${
-          !danger && styles.ByteHide
+        className={`${styles.DangerDangerText} ${styles.DangerInputEventText} ${
+          !danger && styles.DangerHide
         }`}
       >
         {dangerText}

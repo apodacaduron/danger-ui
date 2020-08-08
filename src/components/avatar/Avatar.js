@@ -16,18 +16,18 @@ const Avatar = ({
 
   return (
     <div
-      className={styles.ByteAvatar}
+      className={styles.DangerAvatar}
       style={{ width: size, height: size, borderRadius: `${radius}px` }}
     >
       <img
         src={typeof src !== 'undefined' && !imgError ? src : DefaultAvatar}
         alt={alt}
         onError={() => setImgErrorVal(true)}
-        className={`${styles.ByteImage} ${
-          (!src || imgError) && text ? styles.ByteHidden : ''
-        } ${(!src || imgError) && !text ? styles.BytePrimaryBackground : ''} ${
-          (!src || imgError) && !text ? styles.ByteDefaultAvatar : ''
-        }`}
+        className={`${styles.DangerImage} ${
+          (!src || imgError) && text ? styles.DangerHidden : ''
+        } ${
+          (!src || imgError) && !text ? styles.DangerPrimaryBackground : ''
+        } ${(!src || imgError) && !text ? styles.DangerDefaultAvatar : ''}`}
         style={{
           background:
             typeof src === 'undefined' || (imgError && color !== 'primary')
@@ -36,11 +36,11 @@ const Avatar = ({
         }}
       />
       <div
-        className={`${styles.ByteAvatarText} ${
-          !text ? styles.ByteHidden : ''
-        } ${src && !imgError ? styles.ByteHidden : ''} ${
+        className={`${styles.DangerAvatarText} ${
+          !text ? styles.DangerHidden : ''
+        } ${src && !imgError ? styles.DangerHidden : ''} ${
           typeof src === 'undefined' || (imgError && color === 'primary')
-            ? styles.ByteLightPrimaryBackground
+            ? styles.DangerLightPrimaryBackground
             : ''
         }`}
         style={{

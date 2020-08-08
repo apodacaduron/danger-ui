@@ -17,15 +17,15 @@ const Button = ({
   const checkType = (_design) => {
     switch (_design) {
       case 'light':
-        return styles.ByteButtonLight
+        return styles.DangerButtonLight
       case 'round':
-        return styles.ByteButtonRound
+        return styles.DangerButtonRound
       case 'transparent':
-        return styles.ByteButtonTransparent
+        return styles.DangerButtonTransparent
       case 'border':
-        return styles.ByteButtonBorder
+        return styles.DangerButtonBorder
       default:
-        return styles.ByteButtonRegular
+        return styles.DangerButtonRegular
     }
   }
 
@@ -33,9 +33,9 @@ const Button = ({
     <button
       {...props}
       onClick={!loading ? onClick : undefined}
-      className={`${styles.ByteButton} ${checkType(design)} ${
-        loading && styles.ByteButtonLoading
-      } ${block && styles.ByteButtonBlock}`}
+      className={`${styles.DangerButton} ${checkType(design)} ${
+        loading && styles.DangerButtonLoading
+      } ${block && styles.DangerButtonBlock}`}
       disabled={disabled}
       style={{
         borderRadius: `${radius > 50 ? 50 : radius}px`
@@ -44,7 +44,7 @@ const Button = ({
       {children}
 
       {loading && (
-        <div className={styles.ByteSpinner}>
+        <div className={styles.DangerSpinner}>
           <Spinner />
         </div>
       )}

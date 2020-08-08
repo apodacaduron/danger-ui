@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, Input, Avatar } from 'danger-ui'
+import { Button, Input, Avatar, Table } from 'danger-ui'
 import 'danger-ui/dist/index.css'
 
 const App = () => {
@@ -8,6 +8,22 @@ const App = () => {
   const printInputValue = (e) => {
     console.log(e.target.value)
   }
+  const columns = ['name', 'age', 'occupation', 'email']
+  const data = [
+    {
+      name: 'Daniel',
+      age: 23,
+      occupation: 'Developer',
+      email: 'apodacaduron@gmail.com'
+    }
+  ]
+
+  const cellStyle = {
+    display: 'table-cell', padding: '8px 16px'
+  }
+
+  const rowStyle = { display: 'table-row', borderTop: '1px solid #cccccc' }
+
   return (
     <div>
       <Button design='regular' onClick={print}>
@@ -21,6 +37,20 @@ const App = () => {
         dangerText='This is required'
       />
       <Avatar />
+      <Table
+        columns={columns}
+        body={data.map((row, rowIndex) => {
+          return (
+            <div key={rowIndex} style={rowStyle}>
+              {columns.map((column, columnIndex) => {
+                return <div key={columnIndex} style={cellStyle}>
+                  {row[column]}
+                </div>
+              })}
+            </div>
+          )
+        })}
+      />
     </div>
   )
 }

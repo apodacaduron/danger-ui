@@ -1,6 +1,6 @@
 @import '../../variables.sass'
 
-.ByteInput
+.DangerInput
   cursor: text
   margin: 18px 0 2px 0
   padding: 0 16px
@@ -14,10 +14,10 @@
   display: flex
   align-items: center
   &:hover:not([disabled])
-    .BytePlaceholder
+    .DangerPlaceholder
       transform: translate3d(0px, 0, 0)
   &:focus-within:not([disabled])
-    .BytePlaceholder
+    .DangerPlaceholder
       transform: translate3d(0px, 0, 0)
   input
     color: rgba($text, 0.8)
@@ -33,7 +33,7 @@
       color: $input-placeholder
       user-select: none
 
-.ByteInputBorder
+.DangerInputBorder
   border: 1px solid $input-border
   &:focus-within:not([disabled])
     border: 1px solid $primary
@@ -41,63 +41,63 @@
     -moz-box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
     box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
 
-.ByteInputLine
+.DangerInputLine
   border-bottom: 1px solid $input-border
   &:focus-within:not([disabled])
     border-bottom: 1px solid $primary
 
-.ByteInputSolid
+.DangerInputSolid
   background: rgba($input-solid, 0.6)
   border: 1.1px solid $input-border
   &:focus-within:not([disabled])
     background: rgba($input-solid, 1)
     border: 1.1px solid $primary
 
-.ByteInputDisabled
+.DangerInputDisabled
   background: $disabled
   color: $disabled-text
   cursor: default
 
-.ByteInputText
+.DangerInputText
   transition: 0.2s all ease-in-out
 
-.BytePlaceholder
+.DangerPlaceholder
   color: $input-placeholder
   user-select: none
   position: absolute
   font-size: $input-font-size
   transform: translate3d(-3px, 0, 0)
 
-.BytePlaceholderDanger
+.DangerPlaceholderDanger
   color: rgba($danger, 0.6)
   
-.ByteInputDanger
+.DangerInputDanger
   color: $danger
   background: rgba($danger, 0.1)
   border-color: rgba($danger, 1)
 
-.ByteLabel
+.DangerLabel
   color: $text
   user-select: none
   position: absolute
   transform: translate3d(-18px, -32px, 0)
   font-size: 14px
 
-.ByteLabelDanger
+.DangerLabelDanger
   color: $danger
   user-select: none
   position: absolute
   transform: translate3d(-18px, -32px, 0)
   font-size: 14px
 
-.ByteDangerText
+.DangerDangerText
   color: $danger
 
-.ByteInputEventText
+.DangerInputEventText
   font-size: 14px
 
-.ByteHide
+.DangerHide
   display: none
 
-.ByteInputBlock
+.DangerInputBlock
   width: 100%
