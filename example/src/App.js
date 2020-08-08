@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, Input, Avatar, Table } from 'danger-ui'
+import { Button, Input, Avatar, Table, Badge } from 'danger-ui'
 import 'danger-ui/dist/index.css'
 
 const App = () => {
@@ -51,6 +51,7 @@ const App = () => {
           )
         })}
       />
+      <Badge text="Hey bro" />
     </div>
   )
 }
