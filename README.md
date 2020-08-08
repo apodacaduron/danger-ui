@@ -16,6 +16,8 @@ npm install --save danger-ui
 - Button
 - Avatar
 - Spinner
+- Table
+- Badge
 
 ## Usage
 
