@@ -18,6 +18,7 @@ npm install --save danger-ui
 - Spinner
 - Table
 - Badge
+- Select
 
 ## Usage
 
