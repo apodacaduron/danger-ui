@@ -8,8 +8,8 @@ const App = () => {
   const printInputValue = (e) => {
     console.log(e.target.value)
   }
-  const printSelectValue = (value) => {
-    console.log(value)
+  const printSelectValue = (e) => {
+    console.log(e.target.value)
   }
   const columns = ['name', 'age', 'occupation', 'email']
   const data = [
@@ -58,6 +58,7 @@ const App = () => {
       <Select value="doctor" data={[{ option: 'Psychologist', value: 'psychologist' }, { option: 'Doctor', value: 'doctor' }]} onChange={printSelectValue} />
       <Select danger={true}
         dangerText='This is required'
+        id="role"
         value="doctor" data={[{ option: 'Psychologist', value: 'psychologist' }, { option: 'Doctor', value: 'doctor' }]} onChange={printSelectValue} />
     </div>
   )

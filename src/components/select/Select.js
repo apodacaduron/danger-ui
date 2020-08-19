@@ -8,6 +8,7 @@ const Select = ({
   radius = 10,
   placeholder = '',
   value = '',
+  id = '',
   data = [],
   onChange,
   onFocus,
@@ -31,15 +32,18 @@ const Select = ({
 
   const addSelectChange = (event) => {
     if (event.target && event.target.value) {
-      onChange && onChange(event.target.value)
+      onChange && onChange(event)
       setSelectVal(event.target.value)
     } else {
-      onChange && onChange(event.value)
+      event.target = { value: event.value }
+      if (id) event.target.id = id
+      onChange && onChange(event)
+      console.log(event, id)
       setSelectVal(event.value)
     }
   }
 
-  const toggleSelectFocus = (event) => {
+  const toggleSelectFocus = () => {
     setFocus(!focus)
   }
 
@@ -71,6 +75,7 @@ const Select = ({
       <select
         {...props}
         value={selectVal}
+        id={id}
         ref={(select) => {
           setSelectBox(select)
         }}
@@ -89,6 +94,7 @@ const Select = ({
         {generateOptionsNative()}
       </select>
       <div
+        {...props}
         onClick={toggleSelectFocus}
         className={`${styles.DangerSelect} ${styles.DangerSelectCustom} ${
           disabled ? styles.DangerSelectDisabled : ''
