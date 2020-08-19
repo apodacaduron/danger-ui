@@ -1,0 +1,145 @@
+@import '../../variables.sass'
+
+.DangerSelect
+  cursor: text
+  margin: 18px 0 2px 0
+  padding: 0 16px
+  min-height: 42px
+  min-width: 260px
+  transition: 0.2s all ease-in-out
+  width: max-content
+  box-sizing: border-box
+  outline: 0
+  cursor: pointer
+  user-select: none
+  position: relative
+  font-weight: bold
+  display: flex
+  position: relative
+  background: rgba($input-solid, 0.6)
+  border: 1.1px solid $input-border
+  &:focus-within:not([disabled])
+    background: rgba($input-solid, 1)
+    border: 1.1px solid $primary
+  align-items: center
+  &:hover:not([disabled])
+    .DangerPlaceholder
+      transform: translate3d(0px, 0, 0)
+  &:focus-within:not([disabled])
+    .DangerPlaceholder
+      transform: translate3d(0px, 0, 0)
+  input
+    color: rgba($text, 0.8)
+    font-size: $input-font-size
+    background: transparent
+    border: 0
+    outline: 0
+    width: 100%
+    &::selection
+      background: $primary
+      color: $white
+    &::placeholder
+      color: $input-placeholder
+      user-select: none
+
+.DangerSelectDisabled
+  background: $disabled
+  color: $disabled-text
+  cursor: default
+
+.DangerSelectText
+  transition: 0.2s all ease-in-out
+
+.DangerPlaceholder
+  color: $input-placeholder
+  user-select: none
+  position: absolute
+  font-size: $input-font-size
+  transform: translate3d(-3px, 0, 0)
+
+.DangerPlaceholderDanger
+  color: rgba($danger, 0.6)
+  
+.DangerSelectDanger
+  color: $danger
+  background: rgba($danger, 0.1)
+  border-color: rgba($danger, 1)
+
+.DangerLabel
+  color: $text
+  user-select: none
+  position: absolute
+  transform: translate3d(-18px, -32px, 0)
+  font-size: 14px
+
+.DangerLabelDanger
+  color: $danger
+  user-select: none
+  position: absolute
+  transform: translate3d(-18px, -32px, 0)
+  font-size: 14px
+
+.DangerDangerText
+  color: $danger
+
+.DangerSelectEventText
+  font-size: 14px
+
+.DangerHide
+  display: none
+
+.DangerSelectBlock
+  width: 100%
+
+.DangerSelectCustomMenuContainer
+  position: absolute
+  top: 50px
+  left: 0
+  width: 100%
+  list-style: none
+  margin: 0
+  padding: 10px 10px
+  border-radius: 10px
+  background: white
+  -webkit-box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.1)
+  -moz-box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.1)
+  box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.1)
+  box-sizing: border-box
+  max-height: 300px
+  overflow-y: auto
+
+.DangerSelectCustomMenuItem
+  border-radius: 10px
+  cursor: pointer
+  width: 100%
+  box-sizing: border-box
+  padding: 10px 14px
+  transition: 0.2s all ease-in-out
+  font-weight: lighter
+  color: black
+  &:hover
+    color: rgba($primary, 1)
+    transform: translateX(4px)
+
+.DangerSelectCustomFocus
+  background: rgba($input-solid, 1)
+  border: 1.1px solid $primary
+
+.DangerSelectCustomMenuItemSelected
+  color: rgba($primary, 1)
+  background: rgba($primary, 0.1)
+
+.DangerSelectChevron
+  position: absolute
+  right: 10px
+  transition: 0.2s all ease-in-out
+.DangerSelectChevronUp
+  transform: rotate(180deg)
+
+@media (hover:none), (hover:on-demand)
+  div.DangerSelectCustom
+    display: none !important
+
+@media not all and (hover: none)
+  select.DangerSelectNative
+    display: none !important

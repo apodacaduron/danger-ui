@@ -1,12 +1,15 @@
 import React from 'react'
 
-import { Button, Input, Avatar, Table, Badge } from 'danger-ui'
+import { Button, Input, Avatar, Table, Badge, Select } from 'danger-ui'
 import 'danger-ui/dist/index.css'
 
 const App = () => {
   const print = () => console.log('test')
   const printInputValue = (e) => {
     console.log(e.target.value)
+  }
+  const printSelectValue = (value) => {
+    console.log(value)
   }
   const columns = ['name', 'age', 'occupation', 'email']
   const data = [
@@ -52,6 +55,10 @@ const App = () => {
         })}
       />
       <Badge text="Hey bro" />
+      <Select value="doctor" data={[{ option: 'Psychologist', value: 'psychologist' }, { option: 'Doctor', value: 'doctor' }]} onChange={printSelectValue} />
+      <Select danger={true}
+        dangerText='This is required'
+        value="doctor" data={[{ option: 'Psychologist', value: 'psychologist' }, { option: 'Doctor', value: 'doctor' }]} onChange={printSelectValue} />
     </div>
   )
 }
