@@ -5,5 +5,6 @@ import Table from './components/table/Table'
 import Badge from './components/badge/Badge'
 import Spinner from './components/spinner/Spinner'
 import Select from './components/select/Select'
+import Alert from './components/alert/Alert'
 
-export { Button, Input, Avatar, Table, Badge, Spinner, Select }
+export { Button, Input, Avatar, Table, Badge, Spinner, Select, Alert }

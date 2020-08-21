@@ -19,6 +19,7 @@ npm install --save danger-ui
 - Table
 - Badge
 - Select
+- Alert
 
 ## Usage
 
