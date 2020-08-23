@@ -13,7 +13,7 @@ npm install --save danger-ui
 ## Components
 
 - Input
-- Button
+- [Button](#button)
 - Avatar
 - Spinner
 - Table
@@ -46,7 +46,7 @@ const Example = () => {
 | `radius`   | `number`   | 0 - 50                                           | Border radius                              | `10`      |
 | `loading`  | `boolean`  | `true` `false`                                   | Disables button and show loading when true | `false`   |
 | `onClick`  | `function` |                                                  | Triggers function passed                   |           |
-| block      | `boolean`  | `true` `false`                                   | Makes width 100%                           | `false`   |
+| `block`    | `boolean`  | `true` `false`                                   | Makes width 100%                           | `false`   |
 
 ## License
 
