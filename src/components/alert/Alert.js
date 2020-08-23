@@ -6,7 +6,8 @@ const Alert = ({
   children,
   color = 'primary',
   position = 'top-center',
-  visible = false
+  visible = false,
+  onClick
 }) => {
   const getBackgroundColor = () => {
     switch (color) {
@@ -44,6 +45,7 @@ const Alert = ({
 
   return (
     <div
+      onClick={onClick}
       className={`${
         styles.DangerAlertContainer
       } ${getBackgroundColor()} ${getPosition()} ${

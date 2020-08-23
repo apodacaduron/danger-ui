@@ -8,7 +8,8 @@ import {
   Badge,
   Select,
   Alert,
-  Modal
+  Modal,
+  FormGroup
 } from 'danger-ui'
 import 'danger-ui/dist/index.css'
 
@@ -47,7 +48,9 @@ const App = () => {
         Iniciar Sesión
       </Button>
       <Button onClick={toggleAlert}>Activar Alerta</Button>
-      <Input placeholder='Email' onChange={printInputValue} />
+      <FormGroup>
+        <Input placeholder='Email' onChange={printInputValue} />
+      </FormGroup>
       <Input
         placeholder='Email'
         onChange={printInputValue}
@@ -72,14 +75,16 @@ const App = () => {
         })}
       />
       <Badge text='Hey bro' />
-      <Select
-        value='doctor'
-        data={[
-          { option: 'Psychologist', value: 'psychologist' },
-          { option: 'Doctor', value: 'doctor' }
-        ]}
-        onChange={printSelectValue}
-      />
+      <FormGroup>
+        <Select
+          value='doctor'
+          data={[
+            { option: 'Psychologist', value: 'psychologist' },
+            { option: 'Doctor', value: 'doctor' }
+          ]}
+          onChange={printSelectValue}
+        />
+      </FormGroup>
       <Select
         danger={true}
         dangerText='This is required'

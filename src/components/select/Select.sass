@@ -2,7 +2,6 @@
 
 .DangerSelect
   cursor: text
-  margin: 18px 0 2px 0
   padding: 0 16px
   min-height: 42px
   min-width: 260px
@@ -15,13 +14,13 @@
   position: relative
   font-weight: bold
   display: flex
-  position: relative
+  align-items: center
   background: rgba($input-solid, 0.6)
   border: 1.1px solid $input-border
   &:focus-within:not([disabled])
     background: rgba($input-solid, 1)
     border: 1.1px solid $primary
-  align-items: center
+    align-items: center
   &:hover:not([disabled])
     .DangerPlaceholder
       transform: translate3d(0px, 0, 0)
@@ -59,7 +58,7 @@
 
 .DangerPlaceholderDanger
   color: rgba($danger, 0.6)
-  
+
 .DangerSelectDanger
   color: $danger
   background: rgba($danger, 0.1)

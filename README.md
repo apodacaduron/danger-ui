@@ -21,6 +21,7 @@ npm install --save danger-ui
 - Select
 - Alert
 - Modal
+- FormGroup
 
 ## Usage
 
