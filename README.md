@@ -20,6 +20,7 @@ npm install --save danger-ui
 - Badge
 - Select
 - Alert
+- Modal
 
 ## Usage
 

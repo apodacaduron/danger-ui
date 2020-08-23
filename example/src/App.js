@@ -1,12 +1,22 @@
 import React, { useState } from 'react'
 
-import { Button, Input, Avatar, Table, Badge, Select, Alert } from 'danger-ui'
+import {
+  Button,
+  Input,
+  Avatar,
+  Table,
+  Badge,
+  Select,
+  Alert,
+  Modal
+} from 'danger-ui'
 import 'danger-ui/dist/index.css'
 
 const App = () => {
   const [alertVisible, setAlertVisible] = useState(false)
+  const [modalVisible, setModalVisible] = useState(false)
 
-  const print = () => console.log('test')
+  const toggleModal = () => setModalVisible(!modalVisible)
   const toggleAlert = () => setAlertVisible(!alertVisible)
   const printInputValue = (e) => {
     console.log(e.target.value)
@@ -83,6 +93,13 @@ const App = () => {
       />
 
       <Alert visible={alertVisible}>Registered Successfully</Alert>
+      <Button onClick={toggleModal}>Open Modal</Button>
+      <Modal
+        visible={modalVisible}
+        onClickOut={toggleModal}
+        header='Customers'
+        footer={<Button onClick={toggleModal}>OK</Button>}
+      ></Modal>
     </div>
   )
 }

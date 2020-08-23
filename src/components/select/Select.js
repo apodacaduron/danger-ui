@@ -58,11 +58,31 @@ const Select = ({
   }
 
   const generateOptionsNative = () => {
-    return data.map((e, optionIndex) => { return <option value={e.value} key={optionIndex}>{e.option}</option> })
+    return data.map((e, optionIndex) => {
+      return (
+        <option value={e.value} key={optionIndex}>
+          {e.option}
+        </option>
+      )
+    })
   }
 
   const generateOptionsCustom = () => {
-    return data.map((e, optionIndex) => { return <li onClick={() => addSelectChange(e)} key={optionIndex} className={`${styles.DangerSelectCustomMenuItem} ${e.value === selectVal ? styles.DangerSelectCustomMenuItemSelected : ''}`}>{e.option}</li> })
+    return data.map((e, optionIndex) => {
+      return (
+        <li
+          onClick={() => addSelectChange(e)}
+          key={optionIndex}
+          className={`${styles.DangerSelectCustomMenuItem} ${
+            e.value === selectVal
+              ? styles.DangerSelectCustomMenuItemSelected
+              : ''
+          }`}
+        >
+          {e.option}
+        </li>
+      )
+    })
   }
 
   const findValueCustomSelect = () => {
@@ -86,9 +106,9 @@ const Select = ({
         disabled={disabled}
         className={`${styles.DangerSelect} ${styles.DangerSelectNative} ${
           disabled ? styles.DangerSelectDisabled : ''
-          } ${danger ? styles.DangerSelectDanger : ''} ${
+        } ${danger ? styles.DangerSelectDanger : ''} ${
           block ? styles.DangerSelectBlock : ''
-          }`}
+        }`}
         style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
       >
         {generateOptionsNative()}
@@ -98,23 +118,33 @@ const Select = ({
         onClick={toggleSelectFocus}
         className={`${styles.DangerSelect} ${styles.DangerSelectCustom} ${
           disabled ? styles.DangerSelectDisabled : ''
-          } ${danger ? styles.DangerSelectDanger : ''} ${
+        } ${danger ? styles.DangerSelectDanger : ''} ${
           block ? styles.DangerSelectBlock : ''
-          } ${focus ? styles.DangerSelectCustomFocus : ''}`}
+        } ${focus ? styles.DangerSelectCustomFocus : ''}`}
         disabled={disabled}
         style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
       >
         {findValueCustomSelect()}
-        <ul className={`${styles.DangerSelectCustomMenuContainer} ${!focus ? styles.DangerHide : ''}`}>
+        <ul
+          className={`${styles.DangerSelectCustomMenuContainer} ${
+            !focus ? styles.DangerHide : ''
+          }`}
+        >
           {generateOptionsCustom()}
         </ul>
-        <img className={`${styles.DangerSelectChevron} ${focus ? styles.DangerSelectChevronUp : ''}`} src={arrow} alt="chevron down" />
+        <img
+          className={`${styles.DangerSelectChevron} ${
+            focus ? styles.DangerSelectChevronUp : ''
+          }`}
+          src={arrow}
+          alt='chevron down'
+        />
       </div>
 
       <span
-        className={`${styles.DangerDangerText} ${styles.DangerSelectEventText} ${
-          !danger && styles.DangerHide
-          }`}
+        className={`${styles.DangerDangerText} ${
+          styles.DangerSelectEventText
+        } ${!danger && styles.DangerHide}`}
       >
         {dangerText}
       </span>
