@@ -18,7 +18,7 @@ const Modal = ({ visible = false, header, footer, children, onClickOut }) => {
           {header}
           <hr />
         </div>
-        <div className={styles.DangerModalBody}></div>
+        <div className={styles.DangerModalBody}>{children}</div>
         <div
           className={`${styles.DangerModalFooter} ${
             !footer ? styles.DangerHide : ''
