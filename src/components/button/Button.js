@@ -16,6 +16,8 @@ const Button = ({
 }) => {
   const checkType = (_design) => {
     switch (_design) {
+      case 'regular':
+        return styles.DangerButtonRegular
       case 'light':
         return styles.DangerButtonLight
       case 'round':

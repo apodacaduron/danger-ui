@@ -35,6 +35,19 @@ const Example = () => {
 }
 ```
 
+## Button
+
+**Props**
+
+| Property   | Type       | Values                                           | Description                                | Default   |
+| ---------- | ---------- | ------------------------------------------------ | ------------------------------------------ | --------- |
+| `disabled` | `boolean`  | `true` `false`                                   | Button can be disabled when true           | `false`   |
+| `design`   | `string`   | `regular` `light` `round` `transparent` `border` | Different styles for single component      | `regular` |
+| `radius`   | `number`   | 0 - 50                                           | Border radius                              | `10`      |
+| `loading`  | `boolean`  | `true` `false`                                   | Disables button and show loading when true | `false`   |
+| `onClick`  | `function` |                                                  | Triggers function passed                   |           |
+| block      | `boolean`  | `true` `false`                                   | Makes width 100%                           | `false`   |
+
 ## License
 
 MIT © [apodacaduron](https://github.com/apodacaduron)
