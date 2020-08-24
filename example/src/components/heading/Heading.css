@@ -1,0 +1,40 @@
+#heading {
+  height: 600px;
+  width: 100%;
+  background: #db4848;
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+#heading .text {
+  z-index: 1;
+  text-align: center;
+}
+#heading h1 {
+  color: white;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+#heading p {
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+#heading span {
+  color: white;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#heading .heart-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}

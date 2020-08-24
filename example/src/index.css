@@ -11,4 +11,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: rgb(250, 250, 250);
+  width: 100%;
+  display: block;
+  padding: 10px;
+  box-sizing: border-box;
 }
