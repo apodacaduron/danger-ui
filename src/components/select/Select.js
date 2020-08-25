@@ -37,7 +37,6 @@ const Select = ({
       event.target = { value: event.value }
       if (id) event.target.id = id
       onChange && onChange(event)
-      console.log(event, id)
       setSelectVal(event.value)
     }
   }
