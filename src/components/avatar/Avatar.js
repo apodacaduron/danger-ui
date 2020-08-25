@@ -6,7 +6,7 @@ const Avatar = ({
   size = 40,
   radius = 10,
   src,
-  avatar = 'https://gravatar.com/avatar/2a104e4dab5a3369b8737347683ef28b?s=200&d=identicon&r=x',
+  defaultAvatar = 'https://gravatar.com/avatar/2a104e4dab5a3369b8737347683ef28b?s=200&d=identicon&r=x',
   alt,
   color = 'primary',
   border = false,
@@ -20,7 +20,7 @@ const Avatar = ({
       style={{ width: size, height: size, borderRadius: `${radius}px` }}
     >
       <img
-        src={typeof src !== 'undefined' && !imgError ? src : avatar}
+        src={typeof src !== 'undefined' && !imgError ? src : defaultAvatar}
         alt={alt}
         onError={() => setImgErrorVal(true)}
         className={`${styles.DangerImage} ${
