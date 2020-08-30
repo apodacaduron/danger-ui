@@ -18,7 +18,6 @@ const Input = ({
   ...props
 }) => {
   const [focus, setFocus] = useState('')
-  const [inputVal, setInputVal] = useState(value)
   const [inputBox, setInputBox] = useState()
   const checkType = (_design) => {
     switch (_design) {
@@ -37,13 +36,12 @@ const Input = ({
     if (_focused) {
       setFocus(_focused)
     } else {
-      !inputVal && setFocus(_focused)
+      !value && setFocus(_focused)
     }
   }
 
   const addInputChange = (event) => {
     onChange && onChange(event)
-    setInputVal(event.target.value)
   }
 
   const addInputFocus = (event) => {
@@ -77,14 +75,14 @@ const Input = ({
                 : styles.DangerLabelDanger
               : styles.DangerPlaceholder
           } ${styles.DangerInputText} ${
-            !animated && inputVal && styles.DangerHide
+            !animated && value && styles.DangerHide
           } ${danger && styles.DangerPlaceholderDanger}`}
         >
           {placeholder}
         </span>
         <input
           {...props}
-          value={inputVal}
+          value={value}
           ref={(input) => {
             setInputBox(input)
           }}
