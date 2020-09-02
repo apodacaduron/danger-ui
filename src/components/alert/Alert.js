@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './Alert.sass'
+import './Alert.sass'
 
 const Alert = ({
   children,
@@ -12,50 +12,48 @@ const Alert = ({
   const getBackgroundColor = () => {
     switch (color) {
       case 'primary':
-        return styles.DangerPrimaryBackground
+        return 'DangerPrimaryBackground'
       case 'danger':
-        return styles.DangerDangerBackground
+        return 'DangerDangerBackground'
       case 'warning':
-        return styles.DangerWarningBackground
+        return 'DangerWarningBackground'
       case 'success':
-        return styles.DangerSuccessBackground
+        return 'DangerSuccessBackground'
       default:
-        return styles.DangerPrimaryBackground
+        return 'DangerPrimaryBackground'
     }
   }
 
   const getPosition = () => {
     switch (position) {
       case 'top-left':
-        return styles.DangerPositionTopLeft
+        return 'DangerPositionTopLeft'
       case 'top-center':
-        return styles.DangerPositionTopCenter
+        return 'DangerPositionTopCenter'
       case 'top-right':
-        return styles.DangerPositionTopRight
+        return 'DangerPositionTopRight'
       case 'bottom-left':
-        return styles.DangerPositionBottomLeft
+        return 'DangerPositionBottomLeft'
       case 'bottom-center':
-        return styles.DangerPositionBottomCenter
+        return 'DangerPositionBottomCenter'
       case 'bottom-right':
-        return styles.DangerPositionBottomRight
+        return 'DangerPositionBottomRight'
       default:
-        return styles.DangerPositionTopCenter
+        return 'DangerPositionTopCenter'
     }
   }
 
   return (
     <div
       onClick={onClick}
-      className={`${
-        styles.DangerAlertContainer
-      } ${getBackgroundColor()} ${getPosition()} ${
-        !visible ? styles.DangerHide : ''
+      className={`${'DangerAlertContainer'} ${getBackgroundColor()} ${getPosition()} ${
+        !visible ? 'DangerHide' : ''
       }`}
       style={{
         background: color !== 'primary' ? color : ''
       }}
     >
-      <div className={styles.DangerAlertText}>{children}</div>
+      <div className={'DangerAlertText'}>{children}</div>
     </div>
   )
 }

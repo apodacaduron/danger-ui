@@ -1,26 +1,29 @@
+@import '../../variables'
+
 .DangerTable
-  display: table
   width: 100%
   border-collapse: collapse
-
-.DangerTableRow
-  display: table-row
-
-.DangerTableHeading
-  display: table-header-group
-  font-weight: bold
-
-.DangerTableCell, .DangerTableHead
-  display: table-cell
-  padding: 8px 16px
-
-.DangerTableHead
-  text-transform: capitalize
-
-.DangerTableFoot
-  background-color: #EEE
-  display: table-footer-group
-  font-weight: bold
-
-.DangerTableBody
-  display: table-row-group
+  thead
+    tr
+      background: #f9fafb
+      .DangerTableHead
+        padding: 15px
+        border-bottom: 1px solid $input-border
+        font-weight: bold
+        font-size: 0.82rem
+        text-transform: uppercase
+        text-align: left
+        color: #6b7280
+        &:first-child
+          padding-left: 30px
+        &:last-child
+          padding-right: 30px
+  tbody
+    tr
+      td
+        padding: 15px
+        border-bottom: 1px solid $input-border
+        &:first-child
+          padding-left: 30px
+        &:last-child
+          padding-right: 30px

@@ -1,21 +1,23 @@
 import React from 'react'
 
-import styles from './Table.sass'
+import './Table.sass'
 
 const Table = ({ columns, body }) => {
   const formatColumns = () => {
     return columns.map((col, index) => (
-      <div key={index} className={styles.DangerTableHead}>
+      <th key={index} className={'DangerTableHead'}>
         {col}
-      </div>
+      </th>
     ))
   }
 
   return (
-    <div className={styles.DangerTable}>
-      <div className={styles.DangerTableHeading}>{formatColumns()}</div>
-      <div className={styles.DangerTableBody}>{body}</div>
-    </div>
+    <table className={'DangerTable'}>
+      <thead>
+        <tr>{formatColumns()}</tr>
+      </thead>
+      <tbody>{body}</tbody>
+    </table>
   )
 }
 

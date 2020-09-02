@@ -1,34 +1,28 @@
 import React from 'react'
 
-import styles from './Modal.sass'
+import './Modal.sass'
 
 const Modal = ({ visible = false, header, footer, children, onClickOut }) => {
   return (
     <div
-      className={`${styles.DangerModalContainer} ${
-        !visible ? styles.DangerHide : ''
-      }`}
+      className={`${'DangerModalContainer'} ${!visible ? 'DangerHide' : ''}`}
     >
-      <div className={styles.DangerModalCard}>
+      <div className={'DangerModalCard'}>
         <div
-          className={`${styles.DangerModalHeader} ${
-            !header ? styles.DangerHide : ''
-          }`}
+          className={`${'DangerModalHeader'} ${!header ? 'DangerHide' : ''}`}
         >
           {header}
           <hr />
         </div>
-        <div className={styles.DangerModalBody}>{children}</div>
+        <div className={'DangerModalBody'}>{children}</div>
         <div
-          className={`${styles.DangerModalFooter} ${
-            !footer ? styles.DangerHide : ''
-          }`}
+          className={`${'DangerModalFooter'} ${!footer ? 'DangerHide' : ''}`}
         >
           <hr />
           {footer}
         </div>
       </div>
-      <div onClick={onClickOut} className={styles.DangerModalBackground}></div>
+      <div onClick={onClickOut} className={'DangerModalBackground'}></div>
     </div>
   )
 }

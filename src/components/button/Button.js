@@ -1,7 +1,7 @@
 import React from 'react'
 import Spinner from '../spinner/Spinner'
 
-import styles from './Button.sass'
+import './Button.sass'
 import '../../utils/ripple'
 
 const Button = ({
@@ -17,17 +17,17 @@ const Button = ({
   const checkType = (_design) => {
     switch (_design) {
       case 'regular':
-        return styles.DangerButtonRegular
+        return 'DangerButtonRegular'
       case 'light':
-        return styles.DangerButtonLight
+        return 'DangerButtonLight'
       case 'round':
-        return styles.DangerButtonRound
+        return 'DangerButtonRound'
       case 'transparent':
-        return styles.DangerButtonTransparent
+        return 'DangerButtonTransparent'
       case 'border':
-        return styles.DangerButtonBorder
+        return 'DangerButtonBorder'
       default:
-        return styles.DangerButtonRegular
+        return 'DangerButtonRegular'
     }
   }
 
@@ -35,9 +35,9 @@ const Button = ({
     <button
       {...props}
       onClick={!loading ? onClick : undefined}
-      className={`${styles.DangerButton} ${checkType(design)} ${
-        loading && styles.DangerButtonLoading
-      } ${block && styles.DangerButtonBlock}`}
+      className={`${'DangerButton'} ${checkType(design)} ${
+        loading && 'DangerButtonLoading'
+      } ${block && 'DangerButtonBlock'}`}
       disabled={disabled}
       style={{
         borderRadius: `${radius > 50 ? 50 : radius}px`
@@ -46,7 +46,7 @@ const Button = ({
       {children}
 
       {loading && (
-        <div className={styles.DangerSpinner}>
+        <div className={'DangerSpinner'}>
           <Spinner />
         </div>
       )}

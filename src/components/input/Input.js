@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import styles from './Input.sass'
+import './Input.sass'
 
 const Input = ({
   disabled = false,
@@ -22,13 +22,13 @@ const Input = ({
   const checkType = (_design) => {
     switch (_design) {
       case 'border':
-        return styles.DangerInputBorder
+        return 'DangerInputBorder'
       case 'line':
-        return styles.DangerInputLine
+        return 'DangerInputLine'
       case 'solid':
-        return styles.DangerInputSolid
+        return 'DangerInputSolid'
       default:
-        return styles.DangerInputBorder
+        return 'DangerInputBorder'
     }
   }
 
@@ -59,11 +59,9 @@ const Input = ({
         onClick={() => {
           inputBox.focus()
         }}
-        className={`${styles.DangerInput} ${checkType(design)} ${
-          disabled && styles.DangerInputDisabled
-        } ${danger && styles.DangerInputDanger} ${
-          block && styles.DangerInputBlock
-        }`}
+        className={`${'DangerInput'} ${checkType(design)} ${
+          disabled && 'DangerInputDisabled'
+        } ${danger && 'DangerInputDanger'} ${block && 'DangerInputBlock'}`}
         disabled={disabled}
         style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
       >
@@ -71,12 +69,12 @@ const Input = ({
           className={`${
             focus && animated
               ? !danger
-                ? styles.DangerLabel
-                : styles.DangerLabelDanger
-              : styles.DangerPlaceholder
-          } ${styles.DangerInputText} ${
-            !animated && value && styles.DangerHide
-          } ${danger && styles.DangerPlaceholderDanger}`}
+                ? 'DangerLabel'
+                : 'DangerLabelDanger'
+              : 'DangerPlaceholder'
+          } ${'DangerInputText'} ${!animated && value && 'DangerHide'} ${
+            danger && 'DangerPlaceholderDanger'
+          }`}
         >
           {placeholder}
         </span>
@@ -94,8 +92,8 @@ const Input = ({
         />
       </div>
       <span
-        className={`${styles.DangerDangerText} ${styles.DangerInputEventText} ${
-          !danger && styles.DangerHide
+        className={`${'DangerDangerText'} ${'DangerInputEventText'} ${
+          !danger && 'DangerHide'
         }`}
       >
         {dangerText}

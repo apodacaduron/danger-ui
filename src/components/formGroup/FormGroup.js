@@ -1,9 +1,9 @@
 import React from 'react'
 
-import styles from './FormGroup.sass'
+import './FormGroup.sass'
 
 const FormGroup = ({ children }) => {
-  return <div className={styles.DangerFormGroup}>{children}</div>
+  return <div className={'DangerFormGroup'}>{children}</div>
 }
 
 export default FormGroup

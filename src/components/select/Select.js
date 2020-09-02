@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import styles from './Select.sass'
+import './Select.sass'
 
 const Select = ({
   disabled = false,
@@ -71,10 +71,8 @@ const Select = ({
         <li
           onClick={() => addSelectChange(e)}
           key={optionIndex}
-          className={`${styles.DangerSelectCustomMenuItem} ${
-            e.value === selectVal
-              ? styles.DangerSelectCustomMenuItemSelected
-              : ''
+          className={`${'DangerSelectCustomMenuItem'} ${
+            e.value === selectVal ? 'DangerSelectCustomMenuItemSelected' : ''
           }`}
         >
           {e.option}
@@ -102,10 +100,10 @@ const Select = ({
         onFocus={(e) => addSelectFocus(e)}
         onBlur={(e) => addSelectBlur(e)}
         disabled={disabled}
-        className={`${styles.DangerSelect} ${styles.DangerSelectNative} ${
-          disabled ? styles.DangerSelectDisabled : ''
-        } ${danger ? styles.DangerSelectDanger : ''} ${
-          block ? styles.DangerSelectBlock : ''
+        className={`${'DangerSelect'} ${'DangerSelectNative'} ${
+          disabled ? 'DangerSelectDisabled' : ''
+        } ${danger ? 'DangerSelectDanger' : ''} ${
+          block ? 'DangerSelectBlock' : ''
         }`}
         style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
       >
@@ -114,18 +112,18 @@ const Select = ({
       <div
         {...props}
         onClick={toggleSelectFocus}
-        className={`${styles.DangerSelect} ${styles.DangerSelectCustom} ${
-          disabled ? styles.DangerSelectDisabled : ''
-        } ${danger ? styles.DangerSelectDanger : ''} ${
-          block ? styles.DangerSelectBlock : ''
-        } ${focus ? styles.DangerSelectCustomFocus : ''}`}
+        className={`${'DangerSelect'} ${'DangerSelectCustom'} ${
+          disabled ? 'DangerSelectDisabled' : ''
+        } ${danger ? 'DangerSelectDanger' : ''} ${
+          block ? 'DangerSelectBlock' : ''
+        } ${focus ? 'DangerSelectCustomFocus' : ''}`}
         disabled={disabled}
         style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
       >
         {findValueCustomSelect()}
         <ul
-          className={`${styles.DangerSelectCustomMenuContainer} ${
-            !focus ? styles.DangerHide : ''
+          className={`${'DangerSelectCustomMenuContainer'} ${
+            !focus ? 'DangerHide' : ''
           }`}
         >
           {generateOptionsCustom()}
@@ -140,8 +138,8 @@ const Select = ({
           strokeWidth='2'
           strokeLinecap='round'
           strokeLinejoin='round'
-          className={`${styles.DangerSelectChevron} ${
-            focus ? styles.DangerSelectChevronUp : ''
+          className={`${'DangerSelectChevron'} ${
+            focus ? 'DangerSelectChevronUp' : ''
           }`}
         >
           <polyline points='6 9 12 15 18 9'></polyline>
@@ -149,9 +147,9 @@ const Select = ({
       </div>
 
       <span
-        className={`${styles.DangerDangerText} ${
-          styles.DangerSelectEventText
-        } ${!danger && styles.DangerHide}`}
+        className={`${'DangerDangerText'} ${'DangerSelectEventText'} ${
+          !danger && 'DangerHide'
+        }`}
       >
         {dangerText}
       </span>

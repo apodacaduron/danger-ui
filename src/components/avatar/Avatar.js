@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import styles from './Avatar.sass'
+import './Avatar.sass'
 
 const Avatar = ({
   size = 40,
@@ -16,18 +16,18 @@ const Avatar = ({
 
   return (
     <div
-      className={styles.DangerAvatar}
+      className={'DangerAvatar'}
       style={{ width: size, height: size, borderRadius: `${radius}px` }}
     >
       <img
         src={typeof src !== 'undefined' && !imgError ? src : defaultAvatar}
         alt={alt}
         onError={() => setImgErrorVal(true)}
-        className={`${styles.DangerImage} ${
-          (!src || imgError) && text ? styles.DangerHidden : ''
-        } ${
-          (!src || imgError) && !text ? styles.DangerPrimaryBackground : ''
-        } ${(!src || imgError) && !text ? styles.DangerDefaultAvatar : ''}`}
+        className={`${'DangerImage'} ${
+          (!src || imgError) && text ? 'DangerHidden' : ''
+        } ${(!src || imgError) && !text ? 'DangerPrimaryBackground' : ''} ${
+          (!src || imgError) && !text ? 'DangerDefaultAvatar' : ''
+        }`}
         style={{
           background:
             typeof src === 'undefined' || (imgError && color !== 'primary')
@@ -36,11 +36,11 @@ const Avatar = ({
         }}
       />
       <div
-        className={`${styles.DangerAvatarText} ${
-          !text ? styles.DangerHidden : ''
-        } ${src && !imgError ? styles.DangerHidden : ''} ${
+        className={`${'DangerAvatarText'} ${!text ? 'DangerHidden' : ''} ${
+          src && !imgError ? 'DangerHidden' : ''
+        } ${
           typeof src === 'undefined' || (imgError && color === 'primary')
-            ? styles.DangerLightPrimaryBackground
+            ? 'DangerLightPrimaryBackground'
             : ''
         }`}
         style={{
