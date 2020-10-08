@@ -12,13 +12,11 @@ const Modal = ({ visible = false, header, footer, children, onClickOut }) => {
           className={`${'DangerModalHeader'} ${!header ? 'DangerHide' : ''}`}
         >
           {header}
-          <hr />
         </div>
         <div className={'DangerModalBody'}>{children}</div>
         <div
           className={`${'DangerModalFooter'} ${!footer ? 'DangerHide' : ''}`}
         >
-          <hr />
           {footer}
         </div>
       </div>
