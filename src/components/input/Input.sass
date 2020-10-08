@@ -9,7 +9,7 @@
   width: max-content
   box-sizing: border-box
   position: relative
-  font-weight: bold
+  // font-weight: bold
   display: flex
   align-items: center
   &:hover:not([disabled])
@@ -24,6 +24,7 @@
     background: transparent
     border: 0
     outline: 0
+    z-index: 1
     width: 100%
     &::selection
       background: $primary
@@ -64,6 +65,7 @@
   color: $input-placeholder
   user-select: none
   position: absolute
+  z-index: 0
   font-size: $input-font-size
   transform: translate3d(-3px, 0, 0)
 
