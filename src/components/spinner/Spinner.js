@@ -1,26 +1,19 @@
 import React from 'react'
 
 import './Spinner.sass'
-import styles from '../../variables.scss'
 
-const Spinner = ({ size = 20, width = 1, color = styles.danger }) => (
-  <div className={'LdsRing'} style={{ width: size, height: size }}>
+const Spinner = ({ size = 20, color = 'primary' }) => (
+  <div className='spinner' style={{ width: size, height: size }}>
     <div
+      className={`double-bounce1 ${color === 'primary' && 'primary'}`}
       style={{
-        borderWidth: `${width}px`,
-        borderColor: `${color} transparent transparent transparent`
+        backgroundColor: color !== 'primary' && color
       }}
     ></div>
     <div
+      className={`double-bounce2 ${color === 'primary' && 'primary'}`}
       style={{
-        borderWidth: `${width}px`,
-        borderColor: `${color} transparent transparent transparent`
-      }}
-    ></div>
-    <div
-      style={{
-        borderWidth: `${width}px`,
-        borderColor: `${color} transparent transparent transparent`
+        backgroundColor: `${color}`
       }}
     ></div>
   </div>

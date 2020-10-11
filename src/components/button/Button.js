@@ -47,7 +47,7 @@ const Button = ({
 
       {loading && (
         <div className={'DangerSpinner'}>
-          <Spinner />
+          <Spinner color='white' />
         </div>
       )}
       {!loading && !disabled && <div className='rippleJS'></div>}

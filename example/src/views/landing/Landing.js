@@ -5,6 +5,7 @@ import Introduction from '../../components/sections/Introduction'
 import InputComponent from '../../components/sections/Input'
 import TableComponent from '../../components/sections/Table'
 import SpinnerComponent from '../../components/sections/Spinner'
+import ButtonComponent from '../../components/sections/Button'
 
 import './Landing.css'
 
@@ -18,6 +19,7 @@ const Landing = () => {
         <InputComponent />
         <TableComponent />
         <SpinnerComponent />
+        <ButtonComponent />
       </div>
     </div>
   )
