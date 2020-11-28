@@ -9,6 +9,12 @@ const TableComponent = () => {
       age: 23,
       occupation: 'Developer',
       email: 'apodacaduron@gmail.com'
+    },
+    {
+      name: 'Daniel',
+      age: 23,
+      occupation: 'Developer',
+      email: 'apodacaduron@gmail.com'
     }
   ]
   return (

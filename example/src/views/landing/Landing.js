@@ -6,12 +6,15 @@ import InputComponent from '../../components/sections/Input'
 import TableComponent from '../../components/sections/Table'
 import SpinnerComponent from '../../components/sections/Spinner'
 import ButtonComponent from '../../components/sections/Button'
+import AvatarComponent from '../../components/sections/Avatar'
+import BadgeComponent from '../../components/sections/Badge'
+import SelectComponent from '../../components/sections/Select'
 
 import './Landing.css'
 
 const Landing = () => {
   return (
-    <div>
+    <div id='main-container'>
       <Nav />
       <Heading />
       <div id='sections'>
@@ -20,6 +23,9 @@ const Landing = () => {
         <TableComponent />
         <SpinnerComponent />
         <ButtonComponent />
+        <AvatarComponent />
+        <BadgeComponent />
+        <SelectComponent />
       </div>
     </div>
   )
