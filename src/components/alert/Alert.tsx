@@ -2,13 +2,21 @@ import React from 'react'
 
 import './Alert.sass'
 
+interface IProps {
+  children: JSX.Element
+  position?: string
+  color?: string
+  visible?: boolean
+  onClick: () => void
+}
+
 const Alert = ({
   children,
   color = 'primary',
   position = 'top-center',
   visible = false,
   onClick
-}) => {
+}: IProps) => {
   const getBackgroundColor = () => {
     switch (color) {
       case 'primary':

@@ -2,6 +2,16 @@ import React, { useState } from 'react'
 
 import './Avatar.sass'
 
+interface IProps {
+  size?: number
+  radius?: number
+  src?: string
+  defaultAvatar?: string
+  alt?: string
+  color?: string
+  text?: string
+}
+
 const Avatar = ({
   size = 40,
   radius = 10,
@@ -9,9 +19,8 @@ const Avatar = ({
   defaultAvatar = 'https://gravatar.com/avatar/2a104e4dab5a3369b8737347683ef28b?s=200&d=identicon&r=x',
   alt,
   color = 'primary',
-  border = false,
   text
-}) => {
+}: IProps) => {
   const [imgError, setImgErrorVal] = useState(false)
 
   return (

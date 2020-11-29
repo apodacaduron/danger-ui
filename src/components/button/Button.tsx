@@ -4,6 +4,16 @@ import Spinner from '../spinner/Spinner'
 import './Button.sass'
 import '../../utils/ripple'
 
+interface IProps {
+  children: JSX.Element
+  disabled?: boolean
+  design?: string
+  radius?: number
+  loading?: boolean
+  onClick: () => void
+  block?: boolean
+}
+
 const Button = ({
   children,
   disabled = false,
@@ -13,8 +23,8 @@ const Button = ({
   onClick,
   block = false,
   ...props
-}) => {
-  const checkType = (_design) => {
+}: IProps) => {
+  const checkType = (_design: string) => {
     switch (_design) {
       case 'regular':
         return 'DangerButtonRegular'

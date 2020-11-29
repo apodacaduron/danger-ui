@@ -4,10 +4,10 @@
   "description": "Danger UI React Components",
   "author": "apodacaduron",
   "license": "MIT",
-  "repository": "https://gitlab.com/apodacaduron/danger-ui",
+  "repository": "https://github.com/apodacaduron/danger-ui",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
-  "source": "src/index.js",
+  "source": "src/index.tsx",
   "engines": {
     "node": ">=10"
   },
@@ -27,6 +27,10 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.9",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
@@ -46,10 +50,10 @@
     "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "typescript": "^3.9.7"
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {}
+  ]
 }

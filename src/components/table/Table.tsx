@@ -2,7 +2,12 @@ import React from 'react'
 
 import './Table.sass'
 
-const Table = ({ columns, body }) => {
+interface IProps {
+  columns: Array<string>
+  body: JSX.Element
+}
+
+const Table = ({ columns, body }: IProps) => {
   const formatColumns = () => {
     return columns.map((col, index) => (
       <th key={index} className={'DangerTableHead'}>

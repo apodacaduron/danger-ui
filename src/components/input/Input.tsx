@@ -1,6 +1,21 @@
-import React, { useState } from 'react'
+import React, { ChangeEvent, FocusEvent, useState } from 'react'
 
 import './Input.sass'
+
+interface IProps {
+  disabled?: boolean
+  design?: string
+  radius?: number
+  animated?: boolean
+  placeholder?: string
+  value?: string
+  onChange?: (value: ChangeEvent<HTMLInputElement>) => void
+  onFocus?: (value: FocusEvent<HTMLInputElement>) => void
+  onBlur?: (value: FocusEvent<HTMLInputElement>) => void
+  block?: boolean
+  danger?: boolean
+  dangerText?: string
+}
 
 const Input = ({
   disabled = false,
@@ -16,10 +31,10 @@ const Input = ({
   block = false,
   dangerText,
   ...props
-}) => {
-  const [focus, setFocus] = useState('')
-  const [inputBox, setInputBox] = useState()
-  const checkType = (_design) => {
+}: IProps) => {
+  const [focus, setFocus] = useState(false)
+  const [inputBox, setInputBox] = useState<HTMLInputElement | null>()
+  const checkType = (_design: string) => {
     switch (_design) {
       case 'border':
         return 'DangerInputBorder'
@@ -32,7 +47,7 @@ const Input = ({
     }
   }
 
-  const isFocused = (_focused) => {
+  const isFocused = (_focused: boolean) => {
     if (_focused) {
       setFocus(_focused)
     } else {
@@ -40,15 +55,15 @@ const Input = ({
     }
   }
 
-  const addInputChange = (event) => {
+  const addInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange && onChange(event)
   }
 
-  const addInputFocus = (event) => {
+  const addInputFocus = (event: FocusEvent<HTMLInputElement>) => {
     onFocus && onFocus(event)
     isFocused(true)
   }
-  const addInputBlur = (event) => {
+  const addInputBlur = (event: FocusEvent<HTMLInputElement>) => {
     onBlur && onBlur(event)
     isFocused(false)
   }
@@ -57,12 +72,11 @@ const Input = ({
     <div>
       <div
         onClick={() => {
-          inputBox.focus()
+          inputBox && inputBox.focus()
         }}
         className={`${'DangerInput'} ${checkType(design)} ${
           disabled && 'DangerInputDisabled'
         } ${danger && 'DangerInputDanger'} ${block && 'DangerInputBlock'}`}
-        disabled={disabled}
         style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
       >
         <span

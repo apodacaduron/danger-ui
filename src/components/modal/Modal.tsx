@@ -2,7 +2,21 @@ import React from 'react'
 
 import './Modal.sass'
 
-const Modal = ({ visible = false, header, footer, children, onClickOut }) => {
+interface IProps {
+  visible?: boolean
+  header: JSX.Element
+  footer: JSX.Element
+  children: JSX.Element
+  onClickOut: () => void
+}
+
+const Modal = ({
+  visible = false,
+  header,
+  footer,
+  children,
+  onClickOut
+}: IProps) => {
   return (
     <div
       className={`${'DangerModalContainer'} ${!visible ? 'DangerHide' : ''}`}

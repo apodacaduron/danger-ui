@@ -1,6 +1,26 @@
-import React, { useState } from 'react'
+import React, { ChangeEvent, FocusEvent, useState } from 'react'
 
 import './Select.sass'
+
+interface IProps {
+  disabled?: boolean
+  radius?: number
+  placeholder?: string
+  value?: string
+  id?: string
+  data?: Array<IValues>
+  onChange?: (value: ChangeEvent<HTMLSelectElement>) => void
+  onFocus?: (value: FocusEvent<HTMLSelectElement>) => void
+  onBlur?: (value: FocusEvent<HTMLSelectElement>) => void
+  block?: boolean
+  danger?: boolean
+  dangerText?: string
+}
+
+interface IValues {
+  value?: string
+  option?: string
+}
 
 const Select = ({
   disabled = false,
@@ -12,16 +32,15 @@ const Select = ({
   onChange,
   onFocus,
   onBlur,
-  danger = false,
   block = false,
+  danger = false,
   dangerText,
   ...props
-}) => {
-  const [focus, setFocus] = useState('')
+}: IProps) => {
+  const [focus, setFocus] = useState(false)
   const [selectVal, setSelectVal] = useState(value)
-  const [selectBox, setSelectBox] = useState()
 
-  const isFocused = (_focused) => {
+  const isFocused = (_focused: boolean) => {
     if (_focused) {
       setFocus(_focused)
     } else {
@@ -29,15 +48,10 @@ const Select = ({
     }
   }
 
-  const addSelectChange = (event) => {
+  const addSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
     if (event.target && event.target.value) {
       onChange && onChange(event)
       setSelectVal(event.target.value)
-    } else {
-      event.target = { value: event.value }
-      if (id) event.target.id = id
-      onChange && onChange(event)
-      setSelectVal(event.value)
     }
   }
 
@@ -45,12 +59,12 @@ const Select = ({
     setFocus(!focus)
   }
 
-  const addSelectFocus = (event) => {
+  const addSelectFocus = (event: FocusEvent<HTMLSelectElement>) => {
     onFocus && onFocus(event)
     isFocused(true)
   }
 
-  const addSelectBlur = (event) => {
+  const addSelectBlur = (event: FocusEvent<HTMLSelectElement>) => {
     onBlur && onBlur(event)
     isFocused(false)
   }
@@ -69,7 +83,11 @@ const Select = ({
     return data.map((e, optionIndex) => {
       return (
         <li
-          onClick={() => addSelectChange(e)}
+          onClick={() =>
+            addSelectChange({
+              target: { value: e.value ?? '' }
+            } as ChangeEvent<HTMLSelectElement>)
+          }
           key={optionIndex}
           className={`${'DangerSelectCustomMenuItem'} ${
             e.value === selectVal ? 'DangerSelectCustomMenuItemSelected' : ''
@@ -92,9 +110,6 @@ const Select = ({
         {...props}
         value={selectVal}
         id={id}
-        ref={(select) => {
-          setSelectBox(select)
-        }}
         name={selectVal}
         onChange={(e) => addSelectChange(e)}
         onFocus={(e) => addSelectFocus(e)}
@@ -117,7 +132,6 @@ const Select = ({
         } ${danger ? 'DangerSelectDanger' : ''} ${
           block ? 'DangerSelectBlock' : ''
         } ${focus ? 'DangerSelectCustomFocus' : ''}`}
-        disabled={disabled}
         style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
       >
         {findValueCustomSelect()}

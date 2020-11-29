@@ -2,7 +2,11 @@ import React from 'react'
 
 import './FormGroup.sass'
 
-const FormGroup = ({ children }) => {
+interface IProps {
+  children: JSX.Element
+}
+
+const FormGroup = ({ children }: IProps) => {
   return <div className={'DangerFormGroup'}>{children}</div>
 }
 
