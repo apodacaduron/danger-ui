@@ -18,7 +18,7 @@ const Button = ({
   children,
   disabled = false,
   design = 'regular',
-  radius = 10,
+  radius = 4,
   loading = false,
   onClick,
   block = false,

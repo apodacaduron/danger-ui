@@ -24,7 +24,7 @@ interface IValues {
 
 const Select = ({
   disabled = false,
-  radius = 10,
+  radius = 4,
   placeholder = '',
   value = '',
   id = '',

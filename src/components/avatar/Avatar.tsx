@@ -14,7 +14,7 @@ interface IProps {
 
 const Avatar = ({
   size = 40,
-  radius = 10,
+  radius = 4,
   src,
   defaultAvatar = 'https://gravatar.com/avatar/2a104e4dab5a3369b8737347683ef28b?s=200&d=identicon&r=x',
   alt,

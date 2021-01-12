@@ -20,7 +20,7 @@ interface IProps {
 const Input = ({
   disabled = false,
   design = 'solid',
-  radius = 10,
+  radius = 4,
   animated = false,
   placeholder = '',
   value = '',
