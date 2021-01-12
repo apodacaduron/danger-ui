@@ -8,6 +8,7 @@ import Select from './components/select/Select'
 import Alert from './components/alert/Alert'
 import Modal from './components/modal/Modal'
 import FormGroup from './components/formGroup/FormGroup'
+import TextEditor from './components/textEditor/TextEditor'
 
 export {
   Button,
@@ -19,5 +20,6 @@ export {
   Select,
   Alert,
   Modal,
-  FormGroup
+  FormGroup,
+  TextEditor
 }
