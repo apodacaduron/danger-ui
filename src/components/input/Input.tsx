@@ -1,23 +1,10 @@
-import React, { ChangeEvent, FocusEvent, useState } from 'react'
+import React, { ChangeEvent, FC, FocusEvent, useState } from 'react'
+import { InputProps } from 'utils/interfaces'
+import classNames from 'classnames'
 
 import './Input.sass'
 
-interface IProps {
-  disabled?: boolean
-  design?: string
-  radius?: number
-  animated?: boolean
-  placeholder?: string
-  value?: string
-  onChange?: (value: ChangeEvent<HTMLInputElement>) => void
-  onFocus?: (value: FocusEvent<HTMLInputElement>) => void
-  onBlur?: (value: FocusEvent<HTMLInputElement>) => void
-  block?: boolean
-  danger?: boolean
-  dangerText?: string
-}
-
-const Input = ({
+const Input: FC<InputProps> = ({
   disabled = false,
   design = 'solid',
   radius = 4,
@@ -31,21 +18,9 @@ const Input = ({
   block = false,
   dangerText,
   ...props
-}: IProps) => {
+}) => {
   const [focus, setFocus] = useState(false)
   const [inputBox, setInputBox] = useState<HTMLInputElement | null>()
-  const checkType = (_design: string) => {
-    switch (_design) {
-      case 'border':
-        return 'DangerInputBorder'
-      case 'line':
-        return 'DangerInputLine'
-      case 'solid':
-        return 'DangerInputSolid'
-      default:
-        return 'DangerInputBorder'
-    }
-  }
 
   const isFocused = (_focused: boolean) => {
     if (_focused) {
@@ -63,10 +38,36 @@ const Input = ({
     onFocus && onFocus(event)
     isFocused(true)
   }
+
   const addInputBlur = (event: FocusEvent<HTMLInputElement>) => {
     onBlur && onBlur(event)
     isFocused(false)
   }
+
+  const containerClasses = classNames({
+    'danger-input': true,
+    'danger-input-disabled': disabled,
+    'danger-input-danger': danger,
+    'danger-input-block': block,
+    'danger-input-border': design === 'border',
+    'danger-input-line': design === 'line',
+    'danger-input-solid': design === 'solid'
+  })
+
+  const labelClasses = classNames({
+    'danger-input-text': true,
+    'danger-hide': !animated && value,
+    'danger-placeholder-danger': danger,
+    'danger-label': focus && animated && !danger,
+    'danger-label-danger': focus && animated && danger,
+    'danger-placeholder': !animated
+  })
+
+  const dangerTextClasses = classNames({
+    'danger-danger-text': true,
+    'danger-input-event-text': true,
+    'danger-hide': !danger
+  })
 
   return (
     <div>
@@ -74,44 +75,22 @@ const Input = ({
         onClick={() => {
           inputBox && inputBox.focus()
         }}
-        className={`${'DangerInput'} ${checkType(design)} ${
-          disabled && 'DangerInputDisabled'
-        } ${danger && 'DangerInputDanger'} ${block && 'DangerInputBlock'}`}
+        className={containerClasses}
         style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
       >
-        <span
-          className={`${
-            focus && animated
-              ? !danger
-                ? 'DangerLabel'
-                : 'DangerLabelDanger'
-              : 'DangerPlaceholder'
-          } ${'DangerInputText'} ${!animated && value && 'DangerHide'} ${
-            danger && 'DangerPlaceholderDanger'
-          }`}
-        >
-          {placeholder}
-        </span>
+        <span className={labelClasses}>{placeholder}</span>
         <input
           {...props}
           value={value}
-          ref={(input) => {
-            setInputBox(input)
-          }}
-          onChange={(e) => addInputChange(e)}
-          onFocus={(e) => addInputFocus(e)}
-          onBlur={(e) => addInputBlur(e)}
+          ref={setInputBox}
+          onChange={addInputChange}
+          onFocus={addInputFocus}
+          onBlur={addInputBlur}
           disabled={disabled}
-          className='DangerInnerInput'
+          className='danger-inner-input'
         />
       </div>
-      <span
-        className={`${'DangerDangerText'} ${'DangerInputEventText'} ${
-          !danger && 'DangerHide'
-        }`}
-      >
-        {dangerText}
-      </span>
+      <span className={dangerTextClasses}>{dangerText}</span>
     </div>
   )
 }
