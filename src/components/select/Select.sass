@@ -1,6 +1,6 @@
-@import '../../variables.sass'
+@import '../../variables'
 
-.DangerSelect
+.danger-select
   cursor: text
   padding: 0 16px
   min-height: 42px
@@ -21,10 +21,10 @@
     border: 1.1px solid $primary
     align-items: center
   &:hover:not([disabled])
-    .DangerPlaceholder
+    .danger-placeholder
       transform: translate3d(0px, 0, 0)
   &:focus-within:not([disabled])
-    .DangerPlaceholder
+    .danger-placeholder
       transform: translate3d(0px, 0, 0)
   input
     color: rgba($text, 0.8)
@@ -40,56 +40,56 @@
       color: $input-placeholder
       user-select: none
 
-.DangerSelectDisabled
+.danger-select-disabled
   background: $disabled
   color: $disabled-text
   cursor: default
 
-.DangerSelectText
+.danger-select-text
   transition: 0.2s all ease-in-out
 
-.DangerPlaceholder
+.danger-placeholder
   color: $input-placeholder
   user-select: none
   position: absolute
   font-size: $input-font-size
   transform: translate3d(-3px, 0, 0)
 
-.DangerPlaceholderDanger
+.danger-placeholder-danger
   color: rgba($danger, 0.6)
 
-.DangerSelectDanger
+.danger-select-danger
   color: $danger
   background: rgba($danger, 0.1)
   border-color: rgba($danger, 1)
 
-.DangerLabel
+.danger-label
   color: $text
   user-select: none
   position: absolute
   transform: translate3d(-18px, -32px, 0)
   font-size: 14px
 
-.DangerLabelDanger
+.danger-label-danger
   color: $danger
   user-select: none
   position: absolute
   transform: translate3d(-18px, -32px, 0)
   font-size: 14px
 
-.DangerDangerText
+.danger-danger-text
   color: $danger
 
-.DangerSelectEventText
+.danger-select-event-text
   font-size: 14px
 
-.DangerHide
+.danger-hide
   display: none
 
-.DangerSelectBlock
+.danger-select-block
   width: 100%
 
-.DangerSelectCustomMenuContainer
+.danger-select-custom-menu-container
   position: absolute
   top: 50px
   left: 0
@@ -107,7 +107,7 @@
   max-height: 300px
   overflow-y: auto
 
-.DangerSelectCustomMenuItem
+.danger-select-custom-menu-item
   border-radius: 4px
   cursor: pointer
   width: 100%
@@ -119,25 +119,25 @@
     color: rgba($primary, 1)
     transform: translateX(4px)
 
-.DangerSelectCustomFocus
+.danger-select-custom-focus
   background: rgba($input-solid, 1)
   border: 1.1px solid $primary
 
-.DangerSelectCustomMenuItemSelected
+.danger-select-custom-menu-item-selected
   color: rgba($primary, 1)
   background: rgba($primary, 0.1)
 
-.DangerSelectChevron
+.danger-select-chevron
   position: absolute
   right: 10px
   transition: 0.2s all ease-in-out
-.DangerSelectChevronUp
+.danger-select-chevron-up
   transform: rotate(180deg)
 
 @media (hover:none), (hover:on-demand)
-  div.DangerSelectCustom
+  div.danger-select-custom
     display: none !important
 
 @media not all and (hover: none)
-  select.DangerSelectNative
+  select.danger-select-native
     display: none !important

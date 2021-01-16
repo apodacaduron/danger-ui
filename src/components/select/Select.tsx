@@ -1,28 +1,11 @@
-import React, { ChangeEvent, FocusEvent, useState } from 'react'
+import classNames from 'classnames'
+import useClickOutside from 'hooks/useClickOutside'
+import React, { ChangeEvent, FC, FocusEvent, useRef, useState } from 'react'
+import { SelectProps } from 'utils/interfaces'
 
 import './Select.sass'
 
-interface IProps {
-  disabled?: boolean
-  radius?: number
-  placeholder?: string
-  value?: string
-  id?: string
-  data?: Array<IValues>
-  onChange?: (value: ChangeEvent<HTMLSelectElement>) => void
-  onFocus?: (value: FocusEvent<HTMLSelectElement>) => void
-  onBlur?: (value: FocusEvent<HTMLSelectElement>) => void
-  block?: boolean
-  danger?: boolean
-  dangerText?: string
-}
-
-interface IValues {
-  value?: string
-  option?: string
-}
-
-const Select = ({
+const Select: FC<SelectProps> = ({
   disabled = false,
   radius = 4,
   placeholder = '',
@@ -36,7 +19,9 @@ const Select = ({
   danger = false,
   dangerText,
   ...props
-}: IProps) => {
+}) => {
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  useClickOutside(wrapperRef, () => setFocus(false))
   const [focus, setFocus] = useState(false)
   const [selectVal, setSelectVal] = useState(value)
 
@@ -89,9 +74,10 @@ const Select = ({
             } as ChangeEvent<HTMLSelectElement>)
           }
           key={optionIndex}
-          className={`${'DangerSelectCustomMenuItem'} ${
-            e.value === selectVal ? 'DangerSelectCustomMenuItemSelected' : ''
-          }`}
+          className={classNames({
+            'danger-select-custom-menu-item': true,
+            'danger-select-custom-menu-item-selected': e.value === selectVal
+          })}
         >
           {e.option}
         </li>
@@ -104,8 +90,41 @@ const Select = ({
     return foundVal != null ? foundVal.option : ''
   }
 
+  const nativeSelectClasses = classNames({
+    'danger-select': true,
+    'danger-select-native': true,
+    'danger-select-disabled': disabled,
+    'danger-select-danger': danger,
+    'danger-select-block': block
+  })
+
+  const customSelectClasses = classNames({
+    'danger-select': true,
+    'danger-select-custom': true,
+    'danger-select-disabled': disabled,
+    'danger-select-danger': danger,
+    'danger-select-block': block,
+    'danger-select-custom-focus': focus
+  })
+
+  const customSelectOptionClasses = classNames({
+    'danger-select-custom-menu-container': true,
+    'danger-hide': !focus
+  })
+
+  const chevronClasses = classNames({
+    'danger-select-chevron': true,
+    'danger-select-chevron-up': focus
+  })
+
+  const errorTextClasses = classNames({
+    'danger-danger-text': true,
+    'danger-select-event-text': true,
+    'danger-hide': !danger
+  })
+
   return (
-    <div>
+    <div ref={wrapperRef}>
       <select
         {...props}
         value={selectVal}
@@ -115,11 +134,7 @@ const Select = ({
         onFocus={(e) => addSelectFocus(e)}
         onBlur={(e) => addSelectBlur(e)}
         disabled={disabled}
-        className={`${'DangerSelect'} ${'DangerSelectNative'} ${
-          disabled ? 'DangerSelectDisabled' : ''
-        } ${danger ? 'DangerSelectDanger' : ''} ${
-          block ? 'DangerSelectBlock' : ''
-        }`}
+        className={nativeSelectClasses}
         style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
       >
         {generateOptionsNative()}
@@ -127,21 +142,11 @@ const Select = ({
       <div
         {...props}
         onClick={toggleSelectFocus}
-        className={`${'DangerSelect'} ${'DangerSelectCustom'} ${
-          disabled ? 'DangerSelectDisabled' : ''
-        } ${danger ? 'DangerSelectDanger' : ''} ${
-          block ? 'DangerSelectBlock' : ''
-        } ${focus ? 'DangerSelectCustomFocus' : ''}`}
+        className={customSelectClasses}
         style={{ borderRadius: `${radius > 50 ? 50 : radius}px` }}
       >
         {findValueCustomSelect()}
-        <ul
-          className={`${'DangerSelectCustomMenuContainer'} ${
-            !focus ? 'DangerHide' : ''
-          }`}
-        >
-          {generateOptionsCustom()}
-        </ul>
+        <ul className={customSelectOptionClasses}>{generateOptionsCustom()}</ul>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='24'
@@ -152,21 +157,13 @@ const Select = ({
           strokeWidth='2'
           strokeLinecap='round'
           strokeLinejoin='round'
-          className={`${'DangerSelectChevron'} ${
-            focus ? 'DangerSelectChevronUp' : ''
-          }`}
+          className={chevronClasses}
         >
           <polyline points='6 9 12 15 18 9'></polyline>
         </svg>
       </div>
 
-      <span
-        className={`${'DangerDangerText'} ${'DangerSelectEventText'} ${
-          !danger && 'DangerHide'
-        }`}
-      >
-        {dangerText}
-      </span>
+      <span className={errorTextClasses}>{dangerText}</span>
     </div>
   )
 }
