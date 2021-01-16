@@ -1,20 +1,12 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Spinner from '../spinner/Spinner'
+import classNames from 'classnames'
+import { ButtonProps } from 'utils/interfaces'
 
 import './Button.sass'
-import '../../utils/ripple'
+import 'utils/ripple'
 
-interface IProps {
-  children: JSX.Element
-  disabled?: boolean
-  design?: string
-  radius?: number
-  loading?: boolean
-  onClick: () => void
-  block?: boolean
-}
-
-const Button = ({
+const Button: FC<ButtonProps> = ({
   children,
   disabled = false,
   design = 'regular',
@@ -23,31 +15,23 @@ const Button = ({
   onClick,
   block = false,
   ...props
-}: IProps) => {
-  const checkType = (_design: string) => {
-    switch (_design) {
-      case 'regular':
-        return 'DangerButtonRegular'
-      case 'light':
-        return 'DangerButtonLight'
-      case 'round':
-        return 'DangerButtonRound'
-      case 'transparent':
-        return 'DangerButtonTransparent'
-      case 'border':
-        return 'DangerButtonBorder'
-      default:
-        return 'DangerButtonRegular'
-    }
-  }
+}) => {
+  const buttonClasses = classNames({
+    'danger-button': true,
+    'danger-button-loading': loading,
+    'danger-button-block': block,
+    'danger-button-regular': design === 'regular',
+    'danger-button-light': design === 'light',
+    'danger-button-round': design === 'round',
+    'danger-button-transparent': design === 'transparent',
+    'danger-button-border': design === 'border'
+  })
 
   return (
     <button
       {...props}
       onClick={!loading ? onClick : undefined}
-      className={`${'DangerButton'} ${checkType(design)} ${
-        loading && 'DangerButtonLoading'
-      } ${block && 'DangerButtonBlock'}`}
+      className={buttonClasses}
       disabled={disabled}
       style={{
         borderRadius: `${radius > 50 ? 50 : radius}px`
@@ -56,7 +40,7 @@ const Button = ({
       {children}
 
       {loading && (
-        <div className={'DangerSpinner'}>
+        <div className='left-space'>
           <Spinner color='white' />
         </div>
       )}

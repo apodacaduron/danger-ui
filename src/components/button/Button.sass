@@ -1,6 +1,6 @@
-@import '../../variables.sass'
+@import '../../variables'
 
-.DangerButton
+.danger-button
   border-radius: 4px
   padding: 0 16px
   min-height: 42px
@@ -24,7 +24,7 @@
     color: $disabled-text
     cursor: default
 
-.DangerButtonLoading
+.danger-button-loading
   opacity: 0.5
   cursor: default
   background: $primary !important
@@ -40,7 +40,7 @@
   &:active:not([disabled])
     background: $primary !important
 
-.DangerButtonRegular
+.danger-button-regular
   background: $primary
   color: $white
   &:hover:not([disabled])
@@ -56,7 +56,7 @@
   &:active:not([disabled])
     background: $primary
 
-.DangerButtonLight
+.danger-button-light
   background: rgba($primary, 0.1)
   color: $primary
   &:hover:not([disabled])
@@ -71,7 +71,7 @@
   &:active:not([disabled])
     background: rgba($primary, 0.1)
 
-.DangerButtonRound
+.danger-button-round
   background: $primary
   color: $white
   width: 40px
@@ -92,13 +92,13 @@
   &:active:not([disabled])
     background: $primary
 
-.DangerButtonTransparent
+.danger-button-transparent
   background: transparent
   color: $primary
   &:active:not([disabled])
     background: rgba($primary,0.1)
 
-.DangerButtonBorder
+.danger-button-border
   background: transparent
   color: $primary
   border: 1px solid $primary
@@ -116,8 +116,8 @@
     color: $white
     background: $primary
 
-.DangerSpinner
+.left-space
   margin-left: 12px
 
-.DangerButtonBlock
+.danger-button-block
   width: 100%
