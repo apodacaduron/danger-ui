@@ -28,10 +28,12 @@
   },
   "devDependencies": {
     "@types/braft-editor": "^2.2.0",
+    "@types/classnames": "^2.2.11",
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.9",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-tabs": "^2.3.2",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
@@ -58,6 +60,9 @@
     "dist"
   ],
   "dependencies": {
-    "braft-editor": "^2.3.9"
+    "@y0c/react-datepicker": "^1.0.4",
+    "braft-editor": "^2.3.9",
+    "classnames": "^2.2.6",
+    "react-tabs": "^3.1.2"
   }
 }
