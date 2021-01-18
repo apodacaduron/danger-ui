@@ -17,14 +17,14 @@ const Avatar: FC<AvatarProps> = ({
 
   const imgClasses = classNames({
     'dg-image': true,
-    'dg-hidden': text && (!src || imgError),
+    'dg-hide': text && (!src || imgError),
     'dg-primary-background': !text && (!src || imgError),
     'dg-default-avatar': !text && (!src || imgError)
   })
 
   const textClasses = classNames({
     'dg-avatar-text': true,
-    'dg-hidden': !text || (src && !imgError),
+    'dg-hide': !text || (src && !imgError),
     'dg-light-primary-background':
       typeof src === 'undefined' || (imgError && color === 'primary')
   })

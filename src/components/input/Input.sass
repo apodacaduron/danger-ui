@@ -59,9 +59,10 @@
 
 .dg-input-text
   transition: 0.2s all ease-in-out
+  position: absolute
+  color: $input-placeholder
 
 .dg-placeholder
-  color: $input-placeholder
   user-select: none
   position: absolute
   z-index: 0
@@ -77,17 +78,9 @@
   border-color: rgba($danger, 1)
 
 .dg-label
-  color: $text
+  color: $primary
   user-select: none
-  position: absolute
-  transform: translate3d(-18px, -32px, 0)
-  font-size: 14px
-
-.dg-label-danger
-  color: $danger
-  user-select: none
-  position: absolute
-  transform: translate3d(-18px, -32px, 0)
+  transform: translate3d(-10px, -32px, 0)
   font-size: 14px
 
 .dg-danger-text

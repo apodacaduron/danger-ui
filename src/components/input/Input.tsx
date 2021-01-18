@@ -8,7 +8,7 @@ const Input: FC<InputProps> = ({
   disabled = false,
   design = 'solid',
   radius = 4,
-  animated = false,
+  animated = true,
   placeholder = '',
   value = '',
   onChange,
@@ -58,8 +58,8 @@ const Input: FC<InputProps> = ({
     'dg-input-text': true,
     'dg-hide': !animated && value,
     'dg-placeholder-danger': danger,
-    'dg-label': focus && animated && !danger,
-    'dg-label-danger': focus && animated && danger,
+    'dg-label': focus && animated,
+    'dg-danger-text': focus && animated && danger,
     'dg-placeholder': !animated
   })
 
