@@ -1,23 +1,19 @@
-import React from 'react'
+import React, { FC } from 'react'
+import { TableProps } from 'utils/interfaces'
 
 import './Table.sass'
 
-interface IProps {
-  columns: Array<string>
-  body: JSX.Element
-}
-
-const Table = ({ columns, body }: IProps) => {
+const Table: FC<TableProps> = ({ columns, body }) => {
   const formatColumns = () => {
     return columns.map((col, index) => (
-      <th key={index} className={'DangerTableHead'}>
+      <th key={index} className='danger-table-head'>
         {col}
       </th>
     ))
   }
 
   return (
-    <table className={'DangerTable'}>
+    <table className='danger-table'>
       <thead>
         <tr>{formatColumns()}</tr>
       </thead>

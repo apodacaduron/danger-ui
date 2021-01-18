@@ -75,6 +75,7 @@ interface SelectValues {
 interface SpinnerProps {
   size?: number
   color?: string
+  strokeWidth?: string
 }
 
 interface TableProps {

@@ -41,7 +41,7 @@ const Button: FC<ButtonProps> = ({
 
       {loading && (
         <div className='left-space'>
-          <Spinner color='white' />
+          <Spinner color='white' size={20} />
         </div>
       )}
       {!loading && !disabled && <div className='rippleJS'></div>}

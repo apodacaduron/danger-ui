@@ -1,18 +1,10 @@
-import React, { useState } from 'react'
+import classNames from 'classnames'
+import React, { FC, useState } from 'react'
+import { AvatarProps } from 'utils/interfaces'
 
 import './Avatar.sass'
 
-interface IProps {
-  size?: number
-  radius?: number
-  src?: string
-  defaultAvatar?: string
-  alt?: string
-  color?: string
-  text?: string
-}
-
-const Avatar = ({
+const Avatar: FC<AvatarProps> = ({
   size = 40,
   radius = 4,
   src,
@@ -20,23 +12,33 @@ const Avatar = ({
   alt,
   color = 'primary',
   text
-}: IProps) => {
+}) => {
   const [imgError, setImgErrorVal] = useState(false)
+
+  const imgClasses = classNames({
+    'danger-image': true,
+    'danger-hidden': text && (!src || imgError),
+    'danger-primary-background': !text && (!src || imgError),
+    'danger-default-avatar': !text && (!src || imgError)
+  })
+
+  const textClasses = classNames({
+    'danger-avatar-text': true,
+    'danger-hidden': !text || (src && !imgError),
+    'danger-light-primary-background':
+      typeof src === 'undefined' || (imgError && color === 'primary')
+  })
 
   return (
     <div
-      className={'DangerAvatar'}
+      className='danger-avatar'
       style={{ width: size, height: size, borderRadius: `${radius}px` }}
     >
       <img
         src={typeof src !== 'undefined' && !imgError ? src : defaultAvatar}
         alt={alt}
         onError={() => setImgErrorVal(true)}
-        className={`${'DangerImage'} ${
-          (!src || imgError) && text ? 'DangerHidden' : ''
-        } ${(!src || imgError) && !text ? 'DangerPrimaryBackground' : ''} ${
-          (!src || imgError) && !text ? 'DangerDefaultAvatar' : ''
-        }`}
+        className={imgClasses}
         style={{
           background:
             typeof src === 'undefined' || (imgError && color !== 'primary')
@@ -45,13 +47,7 @@ const Avatar = ({
         }}
       />
       <div
-        className={`${'DangerAvatarText'} ${!text ? 'DangerHidden' : ''} ${
-          src && !imgError ? 'DangerHidden' : ''
-        } ${
-          typeof src === 'undefined' || (imgError && color === 'primary')
-            ? 'DangerLightPrimaryBackground'
-            : ''
-        }`}
+        className={textClasses}
         style={{
           background:
             typeof src === 'undefined' || (imgError && color !== 'primary')

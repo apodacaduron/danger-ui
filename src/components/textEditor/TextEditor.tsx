@@ -2,10 +2,8 @@ import React, { FC, useEffect } from 'react'
 import BraftEditor from 'braft-editor'
 import 'braft-editor/dist/index.css'
 
-interface IProps {}
-
-const TextEditor: FC<IProps> = () => {
-  const [editorState, setEditorState] = React.useState({
+const TextEditor: FC = () => {
+  const [editorState, setEditorState] = React.useState<any>({
     editorState: null
   })
 
@@ -14,14 +12,15 @@ const TextEditor: FC<IProps> = () => {
     // const htmlContent = await fetchEditorContent()
     // Use BraftEditor.createEditorState to convert html strings to editorState data needed by the editor
     // setEditorState({
-    //   editorState: BraftEditor.createEditorState()
+    //   editorState: BraftEditor.createEditorState(htmlContent)
     // })
   }, [])
 
   const submitContent = async () => {
     // Pressing ctrl + s when the editor has focus will execute this method
     // Before the editor content is submitted to the server, you can directly call editorState.toHTML () to get the HTML content
-    // const htmlContent = this.state.editorState.toHTML()
+    const htmlContent = editorState.toHTML()
+    console.log(htmlContent)
     // const result = await saveEditorContent(htmlContent)
   }
 
@@ -32,6 +31,14 @@ const TextEditor: FC<IProps> = () => {
   return (
     <div>
       <BraftEditor
+        excludeControls={[
+          'media',
+          'subscript',
+          'superscript',
+          'code',
+          'line-height',
+          'clear'
+        ]}
         language='en'
         value={editorState}
         onChange={handleEditorChange}

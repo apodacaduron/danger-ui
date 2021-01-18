@@ -1,13 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
+import { ChildrenProps } from 'utils/interfaces'
 
 import './Badge.sass'
 
-interface IProps {
-  children: JSX.Element
-}
-
-const Badge = ({ children }: IProps) => {
-  return <div className={'DangerBadge'}>{children}</div>
+const Badge: FC<ChildrenProps> = ({ children }) => {
+  return <div className='danger-badge'>{children}</div>
 }
 
 export default Badge
