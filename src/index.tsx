@@ -9,6 +9,9 @@ import Alert from './components/alert/Alert'
 import Modal from './components/modal/Modal'
 import FormGroup from './components/formGroup/FormGroup'
 import TextEditor from './components/textEditor/TextEditor'
+import { Tabs, TabList, Tab, TabPanel } from './components/tabs/Tabs'
+
+import './styles.sass'
 
 export {
   Button,
@@ -21,5 +24,9 @@ export {
   Alert,
   Modal,
   FormGroup,
-  TextEditor
+  TextEditor,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanel
 }

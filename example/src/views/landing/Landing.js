@@ -10,6 +10,7 @@ import AvatarComponent from '../../components/sections/Avatar'
 import BadgeComponent from '../../components/sections/Badge'
 import SelectComponent from '../../components/sections/Select'
 import TextEditorComponent from '../../components/sections/TextEditor'
+import TabsComponent from '../../components/sections/Tabs'
 
 import './Landing.css'
 
@@ -28,6 +29,7 @@ const Landing = () => {
         <BadgeComponent />
         <SelectComponent />
         <TextEditorComponent />
+        <TabsComponent />
       </div>
     </div>
   )
