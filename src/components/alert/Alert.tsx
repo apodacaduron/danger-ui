@@ -12,18 +12,18 @@ const Alert: FC<AlertProps> = ({
   onClick
 }) => {
   const containerClasses = classNames({
-    'danger-alert-container': true,
-    'danger-hide': !visible,
-    'danger-position-top-left': position === 'top-left',
-    'danger-position-top-center': position === 'top-center',
-    'danger-position-top-right': position === 'top-right',
-    'danger-position-bottom-left': position === 'bottom-left',
-    'danger-position-bottom-center': position === 'bottom-center',
-    'danger-position-bottom-right': position === 'bottom-right',
-    'danger-primary-background': color === 'primary',
-    'danger-success-background': color === 'success',
-    'danger-warning-background': color === 'warning',
-    'danger-danger-background': color === 'danger'
+    'dg-alert-container': true,
+    'dg-hide': !visible,
+    'dg-position-top-left': position === 'top-left',
+    'dg-position-top-center': position === 'top-center',
+    'dg-position-top-right': position === 'top-right',
+    'dg-position-bottom-left': position === 'bottom-left',
+    'dg-position-bottom-center': position === 'bottom-center',
+    'dg-position-bottom-right': position === 'bottom-right',
+    'dg-primary-background': color === 'primary',
+    'dg-success-background': color === 'success',
+    'dg-warning-background': color === 'warning',
+    'dg-danger-background': color === 'dg'
   })
 
   return (
@@ -34,7 +34,7 @@ const Alert: FC<AlertProps> = ({
         background: color !== 'primary' ? color : ''
       }}
     >
-      <div className='danger-alert-text'>{children}</div>
+      <div className='dg-alert-text'>{children}</div>
     </div>
   )
 }

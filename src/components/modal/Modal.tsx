@@ -12,28 +12,28 @@ const Modal: FC<ModalProps> = ({
   onClickOut
 }) => {
   const containerClasses = classNames({
-    'danger-modal-container': true,
-    'danger-hide': !visible
+    'dg-modal-container': true,
+    'dg-hide': !visible
   })
 
   const headerClasses = classNames({
-    'danger-modal-header': true,
-    'danger-hide': !header
+    'dg-modal-header': true,
+    'dg-hide': !header
   })
 
   const footerClasses = classNames({
-    'danger-modal-footer': true,
-    'danger-hide': !footer
+    'dg-modal-footer': true,
+    'dg-hide': !footer
   })
 
   return (
     <div className={containerClasses}>
-      <div className={'danger-modal-card'}>
+      <div className={'dg-modal-card'}>
         <div className={headerClasses}>{header}</div>
-        <div className={'danger-modal-body'}>{children}</div>
+        <div className={'dg-modal-body'}>{children}</div>
         <div className={footerClasses}>{footer}</div>
       </div>
-      <div onClick={onClickOut} className={'danger-modal-background'}></div>
+      <div onClick={onClickOut} className={'dg-modal-background'}></div>
     </div>
   )
 }

@@ -4,7 +4,7 @@ import { ChildrenProps } from 'utils/interfaces'
 import './Badge.sass'
 
 const Badge: FC<ChildrenProps> = ({ children }) => {
-  return <div className='danger-badge'>{children}</div>
+  return <div className='dg-badge'>{children}</div>
 }
 
 export default Badge

@@ -1,6 +1,6 @@
 @import '../../variables'
 
-.danger-select
+.dg-select
   cursor: text
   padding: 0 16px
   min-height: 42px
@@ -21,10 +21,10 @@
     border: 1.1px solid $primary
     align-items: center
   &:hover:not([disabled])
-    .danger-placeholder
+    .dg-placeholder
       transform: translate3d(0px, 0, 0)
   &:focus-within:not([disabled])
-    .danger-placeholder
+    .dg-placeholder
       transform: translate3d(0px, 0, 0)
   input
     color: rgba($text, 0.8)
@@ -40,56 +40,56 @@
       color: $input-placeholder
       user-select: none
 
-.danger-select-disabled
+.dg-select-disabled
   background: $disabled
   color: $disabled-text
   cursor: default
 
-.danger-select-text
+.dg-select-text
   transition: 0.2s all ease-in-out
 
-.danger-placeholder
+.dg-placeholder
   color: $input-placeholder
   user-select: none
   position: absolute
   font-size: $input-font-size
   transform: translate3d(-3px, 0, 0)
 
-.danger-placeholder-danger
+.dg-placeholder-danger
   color: rgba($danger, 0.6)
 
-.danger-select-danger
+.dg-select-danger
   color: $danger
   background: rgba($danger, 0.1)
   border-color: rgba($danger, 1)
 
-.danger-label
+.dg-label
   color: $text
   user-select: none
   position: absolute
   transform: translate3d(-18px, -32px, 0)
   font-size: 14px
 
-.danger-label-danger
+.dg-label-danger
   color: $danger
   user-select: none
   position: absolute
   transform: translate3d(-18px, -32px, 0)
   font-size: 14px
 
-.danger-danger-text
+.dg-danger-text
   color: $danger
 
-.danger-select-event-text
+.dg-select-event-text
   font-size: 14px
 
-.danger-hide
+.dg-hide
   display: none
 
-.danger-select-block
+.dg-select-block
   width: 100%
 
-.danger-select-custom-menu-container
+.dg-select-custom-menu-container
   position: absolute
   top: 50px
   left: 0
@@ -107,7 +107,7 @@
   max-height: 300px
   overflow-y: auto
 
-.danger-select-custom-menu-item
+.dg-select-custom-menu-item
   border-radius: 4px
   cursor: pointer
   width: 100%
@@ -119,25 +119,25 @@
     color: rgba($primary, 1)
     transform: translateX(4px)
 
-.danger-select-custom-focus
+.dg-select-custom-focus
   background: rgba($input-solid, 1)
   border: 1.1px solid $primary
 
-.danger-select-custom-menu-item-selected
+.dg-select-custom-menu-item-selected
   color: rgba($primary, 1)
   background: rgba($primary, 0.1)
 
-.danger-select-chevron
+.dg-select-chevron
   position: absolute
   right: 10px
   transition: 0.2s all ease-in-out
-.danger-select-chevron-up
+.dg-select-chevron-up
   transform: rotate(180deg)
 
 @media (hover:none), (hover:on-demand)
-  div.danger-select-custom
+  div.dg-select-custom
     display: none !important
 
 @media not all and (hover: none)
-  select.danger-select-native
+  select.dg-select-native
     display: none !important

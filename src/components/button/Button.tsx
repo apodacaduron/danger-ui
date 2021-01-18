@@ -17,14 +17,14 @@ const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   const buttonClasses = classNames({
-    'danger-button': true,
-    'danger-button-loading': loading,
-    'danger-button-block': block,
-    'danger-button-regular': design === 'regular',
-    'danger-button-light': design === 'light',
-    'danger-button-round': design === 'round',
-    'danger-button-transparent': design === 'transparent',
-    'danger-button-border': design === 'border'
+    'dg-button': true,
+    'dg-button-loading': loading,
+    'dg-button-block': block,
+    'dg-button-regular': design === 'regular',
+    'dg-button-light': design === 'light',
+    'dg-button-round': design === 'round',
+    'dg-button-transparent': design === 'transparent',
+    'dg-button-border': design === 'border'
   })
 
   return (

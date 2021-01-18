@@ -1,6 +1,6 @@
 @import '../../variables'
 
-.danger-input
+.dg-input
   cursor: text
   padding: 0 16px
   min-height: 42px
@@ -12,10 +12,10 @@
   display: flex
   align-items: center
   &:hover:not([disabled])
-    .danger-placeholder
+    .dg-placeholder
       transform: translate3d(0px, 0, 0)
   &:focus-within:not([disabled])
-    .danger-placeholder
+    .dg-placeholder
       transform: translate3d(0px, 0, 0)
   input
     color: rgba($text, 0.8)
@@ -32,7 +32,7 @@
       color: $input-placeholder
       user-select: none
 
-.danger-input-border
+.dg-input-border
   border: 1px solid $input-border
   &:focus-within:not([disabled])
     border: 1px solid $primary
@@ -40,27 +40,27 @@
     -moz-box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
     box-shadow: 0px 0px 0px 4px rgba($primary,0.25)
 
-.danger-input-line
+.dg-input-line
   border-bottom: 1px solid $input-border
   &:focus-within:not([disabled])
     border-bottom: 1px solid $primary
 
-.danger-input-solid
+.dg-input-solid
   background: rgba($input-solid, 0.6)
   border: 1.1px solid $input-border
   &:focus-within:not([disabled])
     background: rgba($input-solid, 1)
     border: 1.1px solid $primary
 
-.danger-input-disabled
+.dg-input-disabled
   background: $disabled
   color: $disabled-text
   cursor: default
 
-.danger-input-text
+.dg-input-text
   transition: 0.2s all ease-in-out
 
-.danger-placeholder
+.dg-placeholder
   color: $input-placeholder
   user-select: none
   position: absolute
@@ -68,36 +68,36 @@
   font-size: $input-font-size
   transform: translate3d(-3px, 0, 0)
 
-.danger-placeholder-danger
+.dg-placeholder-danger
   color: rgba($danger, 0.6)
 
-.danger-input-danger
+.dg-input-danger
   color: $danger
   background: rgba($danger, 0.1)
   border-color: rgba($danger, 1)
 
-.danger-label
+.dg-label
   color: $text
   user-select: none
   position: absolute
   transform: translate3d(-18px, -32px, 0)
   font-size: 14px
 
-.danger-label-danger
+.dg-label-danger
   color: $danger
   user-select: none
   position: absolute
   transform: translate3d(-18px, -32px, 0)
   font-size: 14px
 
-.danger-danger-text
+.dg-danger-text
   color: $danger
 
-.danger-input-event-text
+.dg-input-event-text
   font-size: 14px
 
-.danger-hide
+.dg-hide
   display: none
 
-.danger-input-block
+.dg-input-block
   width: 100%

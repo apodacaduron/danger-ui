@@ -16,22 +16,22 @@ const Avatar: FC<AvatarProps> = ({
   const [imgError, setImgErrorVal] = useState(false)
 
   const imgClasses = classNames({
-    'danger-image': true,
-    'danger-hidden': text && (!src || imgError),
-    'danger-primary-background': !text && (!src || imgError),
-    'danger-default-avatar': !text && (!src || imgError)
+    'dg-image': true,
+    'dg-hidden': text && (!src || imgError),
+    'dg-primary-background': !text && (!src || imgError),
+    'dg-default-avatar': !text && (!src || imgError)
   })
 
   const textClasses = classNames({
-    'danger-avatar-text': true,
-    'danger-hidden': !text || (src && !imgError),
-    'danger-light-primary-background':
+    'dg-avatar-text': true,
+    'dg-hidden': !text || (src && !imgError),
+    'dg-light-primary-background':
       typeof src === 'undefined' || (imgError && color === 'primary')
   })
 
   return (
     <div
-      className='danger-avatar'
+      className='dg-avatar'
       style={{ width: size, height: size, borderRadius: `${radius}px` }}
     >
       <img

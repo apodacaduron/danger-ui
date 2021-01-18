@@ -75,8 +75,8 @@ const Select: FC<SelectProps> = ({
           }
           key={optionIndex}
           className={classNames({
-            'danger-select-custom-menu-item': true,
-            'danger-select-custom-menu-item-selected': e.value === selectVal
+            'dg-select-custom-menu-item': true,
+            'dg-select-custom-menu-item-selected': e.value === selectVal
           })}
         >
           {e.option}
@@ -91,36 +91,36 @@ const Select: FC<SelectProps> = ({
   }
 
   const nativeSelectClasses = classNames({
-    'danger-select': true,
-    'danger-select-native': true,
-    'danger-select-disabled': disabled,
-    'danger-select-danger': danger,
-    'danger-select-block': block
+    'dg-select': true,
+    'dg-select-native': true,
+    'dg-select-disabled': disabled,
+    'dg-select-danger': danger,
+    'dg-select-block': block
   })
 
   const customSelectClasses = classNames({
-    'danger-select': true,
-    'danger-select-custom': true,
-    'danger-select-disabled': disabled,
-    'danger-select-danger': danger,
-    'danger-select-block': block,
-    'danger-select-custom-focus': focus
+    'dg-select': true,
+    'dg-select-custom': true,
+    'dg-select-disabled': disabled,
+    'dg-select-danger': danger,
+    'dg-select-block': block,
+    'dg-select-custom-focus': focus
   })
 
   const customSelectOptionClasses = classNames({
-    'danger-select-custom-menu-container': true,
-    'danger-hide': !focus
+    'dg-select-custom-menu-container': true,
+    'dg-hide': !focus
   })
 
   const chevronClasses = classNames({
-    'danger-select-chevron': true,
-    'danger-select-chevron-up': focus
+    'dg-select-chevron': true,
+    'dg-select-chevron-up': focus
   })
 
   const errorTextClasses = classNames({
-    'danger-danger-text': true,
-    'danger-select-event-text': true,
-    'danger-hide': !danger
+    'dg-danger-text': true,
+    'dg-select-event-text': true,
+    'dg-hide': !danger
   })
 
   return (

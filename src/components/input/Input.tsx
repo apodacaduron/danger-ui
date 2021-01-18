@@ -45,28 +45,28 @@ const Input: FC<InputProps> = ({
   }
 
   const containerClasses = classNames({
-    'danger-input': true,
-    'danger-input-disabled': disabled,
-    'danger-input-danger': danger,
-    'danger-input-block': block,
-    'danger-input-border': design === 'border',
-    'danger-input-line': design === 'line',
-    'danger-input-solid': design === 'solid'
+    'dg-input': true,
+    'dg-input-disabled': disabled,
+    'dg-input-danger': danger,
+    'dg-input-block': block,
+    'dg-input-border': design === 'border',
+    'dg-input-line': design === 'line',
+    'dg-input-solid': design === 'solid'
   })
 
   const labelClasses = classNames({
-    'danger-input-text': true,
-    'danger-hide': !animated && value,
-    'danger-placeholder-danger': danger,
-    'danger-label': focus && animated && !danger,
-    'danger-label-danger': focus && animated && danger,
-    'danger-placeholder': !animated
+    'dg-input-text': true,
+    'dg-hide': !animated && value,
+    'dg-placeholder-danger': danger,
+    'dg-label': focus && animated && !danger,
+    'dg-label-danger': focus && animated && danger,
+    'dg-placeholder': !animated
   })
 
   const dangerTextClasses = classNames({
-    'danger-danger-text': true,
-    'danger-input-event-text': true,
-    'danger-hide': !danger
+    'dg-danger-text': true,
+    'dg-input-event-text': true,
+    'dg-hide': !danger
   })
 
   return (
@@ -87,7 +87,7 @@ const Input: FC<InputProps> = ({
           onFocus={addInputFocus}
           onBlur={addInputBlur}
           disabled={disabled}
-          className='danger-inner-input'
+          className='dg-inner-input'
         />
       </div>
       <span className={dangerTextClasses}>{dangerText}</span>

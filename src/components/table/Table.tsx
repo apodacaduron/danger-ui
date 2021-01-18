@@ -6,14 +6,14 @@ import './Table.sass'
 const Table: FC<TableProps> = ({ columns, body }) => {
   const formatColumns = () => {
     return columns.map((col, index) => (
-      <th key={index} className='danger-table-head'>
+      <th key={index} className='dg-table-head'>
         {col}
       </th>
     ))
   }
 
   return (
-    <table className='danger-table'>
+    <table className='dg-table'>
       <thead>
         <tr>{formatColumns()}</tr>
       </thead>
