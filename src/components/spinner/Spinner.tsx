@@ -1,27 +1,39 @@
-import React from 'react'
+import classNames from 'classnames'
+import React, { FC } from 'react'
+import { SpinnerProps } from 'utils/interfaces'
 
 import './Spinner.sass'
 
-interface IProps {
-  size?: number
-  color?: string
+const Spinner: FC<SpinnerProps> = ({
+  size = 30,
+  color = 'primary',
+  strokeWidth = 2
+}) => {
+  const circleClasses = classNames({
+    circle: true,
+    primary: color === 'primary'
+  })
+  return (
+    <svg
+      className='spinner'
+      style={{
+        transform: `scale(${size / 30})`,
+        height: 30,
+        width: 30
+      }}
+    >
+      <circle
+        className={circleClasses}
+        cx='15'
+        cy='15'
+        r='13'
+        style={{
+          strokeWidth: strokeWidth,
+          stroke: color !== 'primary' ? color : ''
+        }}
+      ></circle>
+    </svg>
+  )
 }
-
-const Spinner = ({ size = 20, color = 'primary' }: IProps) => (
-  <div className='spinner' style={{ width: size, height: size }}>
-    <div
-      className={`double-bounce1 ${color === 'primary' && 'primary'}`}
-      style={{
-        backgroundColor: color !== 'primary' ? color : 'initial'
-      }}
-    ></div>
-    <div
-      className={`double-bounce2 ${color === 'primary' && 'primary'}`}
-      style={{
-        backgroundColor: `${color}`
-      }}
-    ></div>
-  </div>
-)
 
 export default Spinner
