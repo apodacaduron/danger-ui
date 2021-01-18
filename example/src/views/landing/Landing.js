@@ -11,6 +11,7 @@ import BadgeComponent from '../../components/sections/Badge'
 import SelectComponent from '../../components/sections/Select'
 import TextEditorComponent from '../../components/sections/TextEditor'
 import TabsComponent from '../../components/sections/Tabs'
+import DatePickerComponent from '../../components/sections/DatePicker'
 
 import './Landing.css'
 
@@ -30,6 +31,7 @@ const Landing = () => {
         <SelectComponent />
         <TextEditorComponent />
         <TabsComponent />
+        <DatePickerComponent />
       </div>
     </div>
   )

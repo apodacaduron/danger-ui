@@ -10,6 +10,11 @@ import Modal from './components/modal/Modal'
 import FormGroup from './components/formGroup/FormGroup'
 import TextEditor from './components/textEditor/TextEditor'
 import { Tabs, TabList, Tab, TabPanel } from './components/tabs/Tabs'
+import {
+  Calendar,
+  DatePicker,
+  RangeDatePicker
+} from './components/datePicker/DatePicker'
 
 import './styles.sass'
 
@@ -28,5 +33,8 @@ export {
   Tabs,
   TabList,
   Tab,
-  TabPanel
+  TabPanel,
+  Calendar,
+  DatePicker,
+  RangeDatePicker
 }
