@@ -1,16 +1,9 @@
+@import '../../variables'
 
 $base-font-size: 12px
 $title-font-size: 1.3em
 
-$primary-color-dark:   #49599a
-$primary-color:        #7986cb
-$primary-color-light:  #aab6fe
-$primary-color-text:   #FFFFFF
-$accent-color:         #03A9F4
-$primary-text-color:   #212121
-$secondary-text-color: #757575
 $divider-color:        #e4e4e4
-$today-bg-color:       #03A9F4
 
 @mixin inline-center
   display: inline-flex
@@ -28,8 +21,12 @@ $today-bg-color:       #03A9F4
 
 .range-picker-input
   display: inline-flex
-  border: 1px solid $divider-color
+  background: rgba($input-solid, 0.6)
+  border: 1px solid $input-border
   width: 300px
+  border-radius: $radius
+  color: rgba($text, 0.8)
+  font-size: $input-font-size
   *
     box-sizing: border-box
 
@@ -57,11 +54,14 @@ $today-bg-color:       #03A9F4
 
   &__text
     padding: 10px
-    border: 1px solid $divider-color
+    border: 1px solid $input-border
     outline: none
-    font-size: $base-font-size * 1.4
+    background: rgba($input-solid, 0.6)
+    border-radius: $radius
+    color: rgba($text, 0.8)
+    font-size: $input-font-size
     &:disabled
-      background: $divider-color
+      background: $input-border
 
   &__clear
     position: absolute
@@ -83,6 +83,7 @@ $today-bg-color:       #03A9F4
 
     &__include-time
       border: 1px solid $divider-color
+      background: red
       .calendar__item, .time__container
         border: none
 
@@ -97,8 +98,8 @@ $today-bg-color:       #03A9F4
         border: none
         border-bottom: 2px solid $divider-color
         &.active
-          color: $primary-color-dark
-          border-bottom: 2px solid $primary-color-dark
+          color: $primary
+          border-bottom: 2px solid $primary
         &:first-child
           border-right: none
         svg
@@ -146,6 +147,7 @@ $today-bg-color:       #03A9F4
       outline: none
 
 .calendar
+  user-select: none
   display: inline-block
   background: white
   font-size: $base-font-size
@@ -161,7 +163,11 @@ $today-bg-color:       #03A9F4
 
   &__item
     display: table-cell
-    border: 1px solid lighten($divider-color,3%)
+    border-radius: $radius
+    overflow: hidden
+    padding: 8px 24px 16px 24px
+    border: 1px solid $input-border
+    box-shadow: $calendar-shadow
     &:not(:first-child)
       border-left: none !important
 
@@ -170,11 +176,11 @@ $today-bg-color:       #03A9F4
 
   &__head
     position: relative
-    background: $primary-color
     padding: 10px 6px
     &--title
       font-size: $title-font-size
-      color: white
+      color: $text
+      cursor: pointer
       text-align: center
       margin: 4px
 
@@ -185,7 +191,7 @@ $today-bg-color:       #03A9F4
       background: none
       font-size: 20px
       svg
-        fill: white
+        fill: $text
 
     &--prev, &--next
       position: absolute
@@ -202,7 +208,7 @@ $today-bg-color:       #03A9F4
     &--show
       display: block !important
     &--today
-      background: $primary-color-light
+      background: $primary-light
       padding: 5px
       display: none
       h2
@@ -221,40 +227,45 @@ $today-bg-color:       #03A9F4
       th
         height: 30px
         vertical-align: middle
-        color: $primary-text-color
+        color: $text
 
   &__day
     height: 40px
     cursor: pointer
     &:hover:not(&--disabled)
-      background: $primary-color-light
+      background: $primary-light
       cursor: pointer
+      border-radius: $radius
 
     &--0
-      color: red
+      color: $disabled-text
     &--6
-      color: blue
+      color: $disabled-text
     &--today
-      background: $today-bg-color
-      color: white
-      border-radius: 50%
+      box-shadow: inset 0px 0px 0px 2px $primary-light
+      color: $primary
+      border-radius: $radius
     &--disabled
       color: #ddd
       cursor: initial
     &--start, &--end, &--selected
-      background: $primary-color
-      color: $primary-color-text
+      background: $primary
+      border-radius: $radius
+      color: white
       &:hover
-        background: $primary-color
+        background: $primary-light
+        border-radius: $radius
 
     &--range
-      background: lighten($primary-color-light,10%)
+      background: lighten($primary-light,10%)
     &--text
       display: block
       font-size: 10px
   &__year, &__month
     height: 55px
     vertical-align: middle
+    border-radius: $radius
     &:hover
-      background: $primary-color-light
+      background: $primary-light
       cursor: pointer
+      border-radius: $radius
