@@ -7,6 +7,7 @@ import TableComponent from '../../components/sections/Table'
 import SpinnerComponent from '../../components/sections/Spinner'
 import ButtonComponent from '../../components/sections/Button'
 import AvatarComponent from '../../components/sections/Avatar'
+import AlertComponent from '../../components/sections/Alert'
 import BadgeComponent from '../../components/sections/Badge'
 import SelectComponent from '../../components/sections/Select'
 import TextEditorComponent from '../../components/sections/TextEditor'
@@ -27,6 +28,7 @@ const Landing = () => {
         <TableComponent />
         <SpinnerComponent />
         <ButtonComponent />
+        <AlertComponent />
         <AvatarComponent />
         <BadgeComponent />
         <SelectComponent />
