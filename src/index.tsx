@@ -15,6 +15,12 @@ import {
   DatePicker,
   RangeDatePicker
 } from './components/datePicker/DatePicker'
+import {
+  Menu,
+  MenuItem,
+  MenuButton,
+  SubMenu
+} from './components/dropdownMenu/DropdownMenu'
 
 import './styles.sass'
 
@@ -36,5 +42,9 @@ export {
   TabPanel,
   Calendar,
   DatePicker,
-  RangeDatePicker
+  RangeDatePicker,
+  Menu,
+  MenuItem,
+  MenuButton,
+  SubMenu
 }

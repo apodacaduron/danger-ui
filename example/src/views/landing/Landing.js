@@ -12,6 +12,7 @@ import SelectComponent from '../../components/sections/Select'
 import TextEditorComponent from '../../components/sections/TextEditor'
 import TabsComponent from '../../components/sections/Tabs'
 import DatePickerComponent from '../../components/sections/DatePicker'
+import DropdownMenuComponent from '../../components/sections/DropdownMenu'
 
 import './Landing.css'
 
@@ -32,6 +33,7 @@ const Landing = () => {
         <TextEditorComponent />
         <TabsComponent />
         <DatePickerComponent />
+        <DropdownMenuComponent />
       </div>
     </div>
   )

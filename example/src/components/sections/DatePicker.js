@@ -4,7 +4,7 @@ import { Calendar, DatePicker, RangeDatePicker } from 'danger-ui'
 const TabsComponent = () => {
   return (
     <div>
-      <h2>Tabs</h2>
+      <h2>Date Picker</h2>
       <Calendar />
       <br />
       <DatePicker />
