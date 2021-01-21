@@ -4,7 +4,7 @@ import { Menu, MenuItem, MenuButton, SubMenu } from 'danger-ui'
 const TabsComponent = () => {
   return (
     <div>
-      <h2>Date Picker</h2>
+      <h2>Dropdown Menu</h2>
       <Menu menuButton={<MenuButton>Open</MenuButton>}>
         <MenuItem>New File</MenuItem>
         <SubMenu label='Recent files'>

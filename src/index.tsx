@@ -21,6 +21,7 @@ import {
   MenuButton,
   SubMenu
 } from './components/dropdownMenu/DropdownMenu'
+import Expandable from './components/expandable/Expandable'
 
 import './styles.sass'
 
@@ -46,5 +47,6 @@ export {
   Menu,
   MenuItem,
   MenuButton,
-  SubMenu
+  SubMenu,
+  Expandable
 }
