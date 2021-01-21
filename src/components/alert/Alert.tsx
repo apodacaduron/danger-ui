@@ -23,7 +23,7 @@ const Alert: FC<AlertProps> = ({
     'dg-primary-background': color === 'primary',
     'dg-success-background': color === 'success',
     'dg-warning-background': color === 'warning',
-    'dg-danger-background': color === 'dg'
+    'dg-danger-background': color === 'danger'
   })
 
   return (
