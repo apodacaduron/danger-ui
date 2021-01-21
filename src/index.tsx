@@ -5,7 +5,7 @@ import Table from './components/table/Table'
 import Badge from './components/badge/Badge'
 import Spinner from './components/spinner/Spinner'
 import Select from './components/select/Select'
-import Alert from './components/alert/Alert'
+import { ToastContainer, toast } from './components/alert/Alert'
 import Modal from './components/modal/Modal'
 import FormGroup from './components/formGroup/FormGroup'
 import TextEditor from './components/textEditor/TextEditor'
@@ -22,6 +22,15 @@ import {
   SubMenu
 } from './components/dropdownMenu/DropdownMenu'
 import Expandable from './components/expandable/Expandable'
+import {
+  Container,
+  Row,
+  Col,
+  Visible,
+  Hidden,
+  ScreenClassProvider,
+  ScreenClassRender
+} from 'components/grid/Grid'
 
 import './styles.sass'
 
@@ -33,7 +42,8 @@ export {
   Badge,
   Spinner,
   Select,
-  Alert,
+  ToastContainer,
+  toast,
   Modal,
   FormGroup,
   TextEditor,
@@ -48,5 +58,12 @@ export {
   MenuItem,
   MenuButton,
   SubMenu,
-  Expandable
+  Expandable,
+  Container,
+  Row,
+  Col,
+  Visible,
+  Hidden,
+  ScreenClassProvider,
+  ScreenClassRender
 }

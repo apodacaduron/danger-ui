@@ -1,24 +1,17 @@
-import React, { useState } from 'react'
-import { Button, Alert } from 'danger-ui'
+import React from 'react'
+import { Button, ToastContainer, toast } from 'danger-ui'
 
 const ButtonComponent = () => {
-  const [alertVisible, setAlertVisible] = useState(false)
-  const [alertPosition, setAlertPosition] = useState('top-center')
-
-  const triggerAlert = (position = 'top-center') => {
-    setAlertPosition(position)
-    setAlertVisible(true)
-    setTimeout(() => {
-      setAlertVisible(false)
-    }, 5000)
+  const triggerAlert = (position) => {
+    toast.success(position, {
+      position
+    })
   }
 
   return (
     <div>
       <h2>Alert</h2>
-      <Alert visible={alertVisible} position={alertPosition}>
-        This is a text
-      </Alert>
+      <ToastContainer />
       <Button onClick={() => triggerAlert('top-left')}>Top left</Button>
       <Button onClick={() => triggerAlert('top-center')}>Top center</Button>
       <Button onClick={() => triggerAlert('top-right')}>Top right</Button>
