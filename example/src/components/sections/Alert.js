@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Button, Alert } from 'danger-ui'
 
 const ButtonComponent = () => {
@@ -8,7 +8,7 @@ const ButtonComponent = () => {
   const triggerAlert = (position = 'top-center') => {
     setAlertPosition(position)
     setAlertVisible(true)
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setAlertVisible(false)
     }, 5000)
   }
