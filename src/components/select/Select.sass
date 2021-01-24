@@ -1,44 +1,40 @@
 @import '../../variables'
 
-.dg-select
-  cursor: text
-  padding: 0 16px
-  min-height: 42px
-  min-width: 260px
-  transition: 0.2s all ease-in-out
-  width: max-content
-  box-sizing: border-box
-  outline: 0
-  cursor: pointer
-  user-select: none
+.dg-select-container
   position: relative
-  display: flex
-  align-items: center
-  background: rgba($input-solid, 0.6)
-  border: 1.1px solid $input-border
-  &:focus-within:not([disabled])
-    background: rgba($input-solid, 1)
-    border: 1.1px solid $primary
-    align-items: center
-  &:hover:not([disabled])
-    .dg-placeholder
-      transform: translate3d(0px, 0, 0)
-  &:focus-within:not([disabled])
-    .dg-placeholder
-      transform: translate3d(0px, 0, 0)
-  input
-    color: rgba($text, 0.8)
-    font-size: $input-font-size
-    background: transparent
-    border: 0
+  .dg-select-label
+    color: $primary
+    user-select: none
+    transform: translate3d(6px, -20px, 0)
+    font-size: 14px
+    position: absolute
+  .dg-select
+    cursor: text
+    padding: 0 16px
+    min-height: 42px
+    min-width: 260px
+    transition: 0.2s all ease-in-out
+    width: max-content
+    box-sizing: border-box
     outline: 0
-    width: 100%
-    &::selection
-      background: $primary
-      color: $white
-    &::placeholder
-      color: $input-placeholder
-      user-select: none
+    cursor: pointer
+    user-select: none
+    position: relative
+    display: flex
+    color: rgba($text, 0.8)
+    align-items: center
+    background: rgba($input-solid, 0.6)
+    border: 1.1px solid $input-border
+    &:focus-within:not([disabled])
+      background: rgba($input-solid, 1)
+      border: 1.1px solid $primary
+      align-items: center
+    &:hover:not([disabled])
+      .dg-placeholder
+        transform: translate3d(0px, 0, 0)
+    &:focus-within:not([disabled])
+      .dg-placeholder
+        transform: translate3d(0px, 0, 0)
 
 .dg-select-disabled
   background: $disabled
@@ -47,13 +43,6 @@
 
 .dg-select-text
   transition: 0.2s all ease-in-out
-
-.dg-placeholder
-  color: $input-placeholder
-  user-select: none
-  position: absolute
-  font-size: $input-font-size
-  transform: translate3d(-3px, 0, 0)
 
 .dg-select-danger
   color: $danger
@@ -94,7 +83,7 @@
   box-sizing: border-box
   padding: 10px 14px
   transition: 0.2s all ease-in-out
-  color: black
+  color: rgba($text, 0.8)
   &:hover
     color: rgba($primary, 1)
     transform: translateX(4px)

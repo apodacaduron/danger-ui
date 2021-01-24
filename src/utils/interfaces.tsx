@@ -55,7 +55,7 @@ interface ModalProps extends ChildrenProps {
 interface SelectProps {
   disabled?: boolean
   radius?: number
-  placeholder?: string
+  label?: string
   value?: string
   id?: string
   data?: SelectValues[]

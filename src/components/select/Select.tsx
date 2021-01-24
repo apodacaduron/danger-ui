@@ -8,9 +8,8 @@ import './Select.sass'
 const Select: FC<SelectProps> = ({
   disabled = false,
   radius = 4,
-  placeholder = '',
+  label = '',
   value = '',
-  id = '',
   data = [],
   onChange,
   onFocus,
@@ -124,11 +123,11 @@ const Select: FC<SelectProps> = ({
   })
 
   return (
-    <div ref={wrapperRef}>
+    <div className='dg-select-container' ref={wrapperRef}>
+      {label && <span className='dg-select-label'>{label}</span>}
       <select
         {...props}
         value={selectVal}
-        id={id}
         name={selectVal}
         onChange={(e) => addSelectChange(e)}
         onFocus={(e) => addSelectFocus(e)}
