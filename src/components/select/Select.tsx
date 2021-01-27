@@ -17,6 +17,7 @@ const Select: FC<SelectProps> = ({
   block = false,
   danger = false,
   dangerText,
+  name = '',
   ...props
 }) => {
   const wrapperRef = useRef<HTMLDivElement>(null)
@@ -69,7 +70,7 @@ const Select: FC<SelectProps> = ({
         <li
           onClick={() =>
             addSelectChange({
-              target: { value: e.value ?? '' }
+              target: { value: e.value ?? '', name: name ?? '' }
             } as ChangeEvent<HTMLSelectElement>)
           }
           key={optionIndex}
