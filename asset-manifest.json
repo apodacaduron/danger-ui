@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "./static/css/main.1396b425.chunk.css",
+    "main.js": "./static/js/main.7b1fc95f.chunk.js",
+    "main.js.map": "./static/js/main.7b1fc95f.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.2df6a33f.js",
+    "runtime-main.js.map": "./static/js/runtime-main.2df6a33f.js.map",
+    "static/css/2.38195e76.chunk.css": "./static/css/2.38195e76.chunk.css",
+    "static/js/2.7461fee2.chunk.js": "./static/js/2.7461fee2.chunk.js",
+    "static/js/2.7461fee2.chunk.js.map": "./static/js/2.7461fee2.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.3053c040fbbda8980e20a4503c293f06.js": "./precache-manifest.3053c040fbbda8980e20a4503c293f06.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.38195e76.chunk.css.map": "./static/css/2.38195e76.chunk.css.map",
+    "static/css/main.1396b425.chunk.css.map": "./static/css/main.1396b425.chunk.css.map",
+    "static/js/2.7461fee2.chunk.js.LICENSE.txt": "./static/js/2.7461fee2.chunk.js.LICENSE.txt",
+    "static/media/Heading.css": "./static/media/background.e0a8489e.jpg",
+    "static/media/danger-logo.svg": "./static/media/danger-logo.60a3ef70.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2df6a33f.js",
+    "static/css/2.38195e76.chunk.css",
+    "static/js/2.7461fee2.chunk.js",
+    "static/css/main.1396b425.chunk.css",
+    "static/js/main.7b1fc95f.chunk.js"
+  ]
+}
