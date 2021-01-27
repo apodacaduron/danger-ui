@@ -1,47 +1,28 @@
 @import '../../variables'
 
-.spinner
-  position: relative
-
-.double-bounce1
-  width: 100%
-  height: 100%
-  border-radius: 50%
-  opacity: 0.6
-  position: absolute
-  top: 0
-  left: 0
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out
-  animation: sk-bounce 2.0s infinite ease-in-out
-
-.double-bounce2
-  width: 100%
-  height: 100%
-  border-radius: 50%
-  opacity: 0.6
-  position: absolute
-  top: 0
-  left: 0
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out
-  animation: sk-bounce 2.0s infinite ease-in-out
-  -webkit-animation-delay: -1.0s
-  animation-delay: -1.0s
+svg.spinner
+  display: block
+  .circle
+    fill: transparent
+    stroke-linecap: round
+    stroke-dasharray: 94.2px
+    -webkit-transform-origin: 15px 15px 0
+    -moz-transform-origin: 15px 15px 0
+    transform-origin: 15px 15px 0
+    -webkit-animation: spinner 2s linear infinite
+    -moz-animation: spinner 2s linear infinite
+    animation: spinner 2s linear infinite
 
 .primary
-  background-color: $primary
+  stroke: $primary
 
-@-webkit-keyframes sk-bounce
-  0%, 100%
-  -webkit-transform: scale(0)
-
+@keyframes spinner
+  0%
+    transform: rotate(0)
+    stroke-dashoffset: 19.8
   50%
-  -webkit-transform: scale(1)
-
-@keyframes sk-bounce
-  0%, 100%
-    transform: scale(0)
-    -webkit-transform: scale(0)
-
-  50%
-    transform: scale(1)
-    -webkit-transform: scale(1)
+    transform: rotate(720deg)
+    stroke-dashoffset: 90
+  100%
+    transform: rotate(1080deg)
+    stroke-dashoffset: 19.8

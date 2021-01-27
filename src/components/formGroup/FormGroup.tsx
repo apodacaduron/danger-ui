@@ -1,13 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
+import { ChildrenProps } from 'utils/interfaces'
 
 import './FormGroup.sass'
 
-interface IProps {
-  children: JSX.Element
-}
-
-const FormGroup = ({ children }: IProps) => {
-  return <div className={'DangerFormGroup'}>{children}</div>
+const FormGroup: FC<ChildrenProps> = ({ children }) => {
+  return <div className='dg-form-group'>{children}</div>
 }
 
 export default FormGroup

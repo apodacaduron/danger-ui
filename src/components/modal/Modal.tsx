@@ -1,40 +1,39 @@
-import React from 'react'
+import classNames from 'classnames'
+import React, { FC } from 'react'
+import { ModalProps } from 'utils/interfaces'
 
 import './Modal.sass'
 
-interface IProps {
-  visible?: boolean
-  header: JSX.Element
-  footer: JSX.Element
-  children: JSX.Element
-  onClickOut: () => void
-}
-
-const Modal = ({
+const Modal: FC<ModalProps> = ({
   visible = false,
   header,
   footer,
   children,
   onClickOut
-}: IProps) => {
+}) => {
+  const containerClasses = classNames({
+    'dg-modal-container': true,
+    'dg-hide': !visible
+  })
+
+  const headerClasses = classNames({
+    'dg-modal-header': true,
+    'dg-hide': !header
+  })
+
+  const footerClasses = classNames({
+    'dg-modal-footer': true,
+    'dg-hide': !footer
+  })
+
   return (
-    <div
-      className={`${'DangerModalContainer'} ${!visible ? 'DangerHide' : ''}`}
-    >
-      <div className={'DangerModalCard'}>
-        <div
-          className={`${'DangerModalHeader'} ${!header ? 'DangerHide' : ''}`}
-        >
-          {header}
-        </div>
-        <div className={'DangerModalBody'}>{children}</div>
-        <div
-          className={`${'DangerModalFooter'} ${!footer ? 'DangerHide' : ''}`}
-        >
-          {footer}
-        </div>
+    <div className={containerClasses}>
+      <div className={'dg-modal-card'}>
+        <div className={headerClasses}>{header}</div>
+        <div className={'dg-modal-body'}>{children}</div>
+        <div className={footerClasses}>{footer}</div>
       </div>
-      <div onClick={onClickOut} className={'DangerModalBackground'}></div>
+      <div onClick={onClickOut} className={'dg-modal-background'}></div>
     </div>
   )
 }

@@ -1,53 +1,37 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Spinner from '../spinner/Spinner'
+import classNames from 'classnames'
+import { ButtonProps } from 'utils/interfaces'
 
 import './Button.sass'
-import '../../utils/ripple'
+import 'utils/ripple'
 
-interface IProps {
-  children: JSX.Element
-  disabled?: boolean
-  design?: string
-  radius?: number
-  loading?: boolean
-  onClick: () => void
-  block?: boolean
-}
-
-const Button = ({
+const Button: FC<ButtonProps> = ({
   children,
   disabled = false,
   design = 'regular',
-  radius = 10,
+  radius = 4,
   loading = false,
   onClick,
   block = false,
   ...props
-}: IProps) => {
-  const checkType = (_design: string) => {
-    switch (_design) {
-      case 'regular':
-        return 'DangerButtonRegular'
-      case 'light':
-        return 'DangerButtonLight'
-      case 'round':
-        return 'DangerButtonRound'
-      case 'transparent':
-        return 'DangerButtonTransparent'
-      case 'border':
-        return 'DangerButtonBorder'
-      default:
-        return 'DangerButtonRegular'
-    }
-  }
+}) => {
+  const buttonClasses = classNames({
+    'dg-button': true,
+    'dg-button-loading': loading,
+    'dg-button-block': block,
+    'dg-button-regular': design === 'regular',
+    'dg-button-light': design === 'light',
+    'dg-button-round': design === 'round',
+    'dg-button-transparent': design === 'transparent',
+    'dg-button-border': design === 'border'
+  })
 
   return (
     <button
       {...props}
       onClick={!loading ? onClick : undefined}
-      className={`${'DangerButton'} ${checkType(design)} ${
-        loading && 'DangerButtonLoading'
-      } ${block && 'DangerButtonBlock'}`}
+      className={buttonClasses}
       disabled={disabled}
       style={{
         borderRadius: `${radius > 50 ? 50 : radius}px`
@@ -56,8 +40,8 @@ const Button = ({
       {children}
 
       {loading && (
-        <div className={'DangerSpinner'}>
-          <Spinner color='white' />
+        <div className='left-space'>
+          <Spinner color='white' size={20} />
         </div>
       )}
       {!loading && !disabled && <div className='rippleJS'></div>}

@@ -1,31 +1,28 @@
-@import '../../variables.sass'
+@import '../../variables'
 
-.DangerAvatar
+.dg-avatar
   display: flex
   align-items: center
   justify-content: center
   overflow: hidden
-  img.DangerImage
+  img.dg-image
     object-fit: cover
     background-size: cover
     width: 100%
     height: 100%
     box-sizing: border-box
-  .DangerDefaultAvatar
+  .dg-default-avatar
     padding: 0px
-  .DangerPrimaryBackground
+  .dg-primary-background
     background: rgba($primary, 1)
-  .DangerLightPrimaryBackground
+  .dg-light-primary-background
     background: rgba($primary, 0.2)
-  .DangerAvatarText
+  .dg-avatar-text
     width: 100%
     height: 100%
     color: rgba($primary, 1)
-    font-weight: bold
+    font-weight: normal
     display: flex
     align-items: center
     justify-content: center
     text-transform: uppercase
-
-.DangerHidden
-  display: none !important

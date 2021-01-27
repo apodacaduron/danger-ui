@@ -1,95 +1,64 @@
-@import '../../variables.sass'
+@import '../../variables'
 
-.DangerSelect
-  cursor: text
-  padding: 0 16px
-  min-height: 42px
-  min-width: 260px
-  transition: 0.2s all ease-in-out
-  width: max-content
-  box-sizing: border-box
-  outline: 0
-  cursor: pointer
-  user-select: none
+.dg-select-container
   position: relative
-  display: flex
-  align-items: center
-  background: rgba($input-solid, 0.6)
-  border: 1.1px solid $input-border
-  &:focus-within:not([disabled])
-    background: rgba($input-solid, 1)
-    border: 1.1px solid $primary
-    align-items: center
-  &:hover:not([disabled])
-    .DangerPlaceholder
-      transform: translate3d(0px, 0, 0)
-  &:focus-within:not([disabled])
-    .DangerPlaceholder
-      transform: translate3d(0px, 0, 0)
-  input
-    color: rgba($text, 0.8)
-    font-size: $input-font-size
-    background: transparent
-    border: 0
+  .dg-select-label
+    color: $primary
+    user-select: none
+    transform: translate3d(6px, -20px, 0)
+    font-size: 14px
+    position: absolute
+  .dg-select
+    cursor: text
+    padding: 0 16px
+    min-height: 42px
+    min-width: 260px
+    transition: 0.2s all ease-in-out
+    width: max-content
+    box-sizing: border-box
     outline: 0
-    width: 100%
-    &::selection
-      background: $primary
-      color: $white
-    &::placeholder
-      color: $input-placeholder
-      user-select: none
+    cursor: pointer
+    user-select: none
+    position: relative
+    display: flex
+    color: rgba($text, 0.8)
+    align-items: center
+    background: rgba($input-solid, 0.6)
+    border: 1.1px solid $input-border
+    &:focus-within:not([disabled])
+      background: rgba($input-solid, 1)
+      border: 1.1px solid $primary
+      align-items: center
+    &:hover:not([disabled])
+      .dg-placeholder
+        transform: translate3d(0px, 0, 0)
+    &:focus-within:not([disabled])
+      .dg-placeholder
+        transform: translate3d(0px, 0, 0)
 
-.DangerSelectDisabled
+.dg-select-disabled
   background: $disabled
   color: $disabled-text
   cursor: default
 
-.DangerSelectText
+.dg-select-text
   transition: 0.2s all ease-in-out
 
-.DangerPlaceholder
-  color: $input-placeholder
-  user-select: none
-  position: absolute
-  font-size: $input-font-size
-  transform: translate3d(-3px, 0, 0)
-
-.DangerPlaceholderDanger
-  color: rgba($danger, 0.6)
-
-.DangerSelectDanger
+.dg-select-danger
   color: $danger
   background: rgba($danger, 0.1)
   border-color: rgba($danger, 1)
 
-.DangerLabel
-  color: $text
-  user-select: none
-  position: absolute
-  transform: translate3d(-18px, -32px, 0)
-  font-size: 14px
-
-.DangerLabelDanger
-  color: $danger
-  user-select: none
-  position: absolute
-  transform: translate3d(-18px, -32px, 0)
-  font-size: 14px
-
-.DangerDangerText
+.dg-danger-text
   color: $danger
 
-.DangerSelectEventText
+.dg-select-event-text
   font-size: 14px
 
-.DangerHide
-  display: none
-
-.DangerSelectBlock
+.dg-select-block
   width: 100%
 
-.DangerSelectCustomMenuContainer
+.dg-select-custom-menu-container
   position: absolute
   top: 50px
   left: 0
@@ -98,7 +67,7 @@
   margin: 0
   padding: 10px 10px
   z-index: 12
-  border-radius: 10px
+  border-radius: $radius
   background: white
   -webkit-box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.1)
   -moz-box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.1)
@@ -107,37 +76,37 @@
   max-height: 300px
   overflow-y: auto
 
-.DangerSelectCustomMenuItem
-  border-radius: 10px
+.dg-select-custom-menu-item
+  border-radius: $radius
   cursor: pointer
   width: 100%
   box-sizing: border-box
   padding: 10px 14px
   transition: 0.2s all ease-in-out
-  color: black
+  color: rgba($text, 0.8)
   &:hover
     color: rgba($primary, 1)
     transform: translateX(4px)
 
-.DangerSelectCustomFocus
+.dg-select-custom-focus
   background: rgba($input-solid, 1)
   border: 1.1px solid $primary
 
-.DangerSelectCustomMenuItemSelected
+.dg-select-custom-menu-item-selected
   color: rgba($primary, 1)
   background: rgba($primary, 0.1)
 
-.DangerSelectChevron
+.dg-select-chevron
   position: absolute
   right: 10px
   transition: 0.2s all ease-in-out
-.DangerSelectChevronUp
+.dg-select-chevron-up
   transform: rotate(180deg)
 
 @media (hover:none), (hover:on-demand)
-  div.DangerSelectCustom
+  div.dg-select-custom
     display: none !important
 
 @media not all and (hover: none)
-  select.DangerSelectNative
+  select.dg-select-native
     display: none !important

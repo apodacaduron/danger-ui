@@ -1,20 +1,17 @@
 @import '../../variables'
 
-.DangerTable
+.dg-table
   width: 100%
   border-collapse: collapse
   overflow-x: auto
   thead
     tr
-      background: #f9fafb
-      .DangerTableHead
+      .dg-table-head
         padding: 15px
-        border-bottom: 1px solid $input-border
-        font-weight: bold
-        font-size: 0.82rem
-        text-transform: uppercase
+        color: rgba($text, 0.8)
+        font-weight: normal
+        font-size: 14px
         text-align: left
-        color: #6b7280
         &:first-child
           padding-left: 30px
         &:last-child
@@ -24,6 +21,7 @@
       td
         padding: 15px
         border-bottom: 1px solid $input-border
+        border-top: 1px solid $input-border
         &:first-child
           padding-left: 30px
         &:last-child

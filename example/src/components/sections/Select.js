@@ -6,6 +6,7 @@ const SelectComponent = () => {
     <div>
       <h2>Select</h2>
       <Select
+        label='Choose a role'
         danger={false}
         dangerText='This is required'
         id='role'
