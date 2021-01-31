@@ -17,6 +17,8 @@
   &:focus-within:not([disabled])
     .dg-placeholder
       transform: translate3d(0px, 0, 0)
+    .dg-label
+      color: $primary
   input
     color: rgba($text, 0.8)
     font-size: $input-font-size
@@ -78,7 +80,7 @@
   border-color: rgba($danger, 1)
 
 .dg-label
-  color: $primary
+  color: rgba($text, 0.8)
   user-select: none
   transform: translate3d(-10px, -32px, 0)
   font-size: 14px

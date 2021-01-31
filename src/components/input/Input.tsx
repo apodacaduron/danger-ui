@@ -19,7 +19,7 @@ const Input: FC<InputProps> = ({
   dangerText,
   ...props
 }) => {
-  const [focus, setFocus] = useState(false)
+  const [focus, setFocus] = useState(() => (value ? true : false))
   const [inputBox, setInputBox] = useState<HTMLInputElement | null>()
 
   const isFocused = (_focused: boolean) => {
