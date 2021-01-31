@@ -5,7 +5,10 @@ const TextEditorComponent = () => {
   return (
     <div>
       <h2>TextEditor</h2>
-      <TextEditor />
+      <TextEditor
+        value={'This is a default value'}
+        onChange={(value) => console.log(value)}
+      />
     </div>
   )
 }
