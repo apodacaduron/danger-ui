@@ -2,12 +2,20 @@
 
 .dg-select-container
   position: relative
+  display: flex
+  width: fit-content
+  &:focus-within:not([disabled])
+    .dg-select-label
+      color: $primary
   .dg-select-label
-    color: $primary
+    color: rgba($text, 0.8)
     user-select: none
     transform: translate3d(6px, -20px, 0)
     font-size: 14px
     position: absolute
+    transition: 0.2s all ease-in-out
+  .dg-select-label-focus
+    color: $primary
   .dg-select
     cursor: text
     padding: 0 16px
@@ -29,10 +37,9 @@
       background: rgba($input-solid, 1)
       border: 1.1px solid $primary
       align-items: center
-    &:hover:not([disabled])
       .dg-placeholder
         transform: translate3d(0px, 0, 0)
-    &:focus-within:not([disabled])
+    &:hover:not([disabled])
       .dg-placeholder
         transform: translate3d(0px, 0, 0)
 

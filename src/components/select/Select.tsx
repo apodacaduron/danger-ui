@@ -1,6 +1,13 @@
 import classNames from 'classnames'
 import useClickOutside from 'hooks/useClickOutside'
-import React, { ChangeEvent, FC, FocusEvent, useRef, useState } from 'react'
+import React, {
+  ChangeEvent,
+  FC,
+  FocusEvent,
+  useRef,
+  useState,
+  useEffect
+} from 'react'
 import { SelectProps } from 'utils/interfaces'
 
 import './Select.sass'
@@ -24,6 +31,10 @@ const Select: FC<SelectProps> = ({
   useClickOutside(wrapperRef, () => setFocus(false))
   const [focus, setFocus] = useState(false)
   const [selectVal, setSelectVal] = useState(value)
+
+  useEffect(() => {
+    setSelectVal(value)
+  }, [value])
 
   const isFocused = (_focused: boolean) => {
     if (_focused) {
@@ -123,9 +134,14 @@ const Select: FC<SelectProps> = ({
     'dg-hide': !danger
   })
 
+  const selectLabelClasses = classNames({
+    'dg-select-label': true,
+    'dg-select-label-focus': focus
+  })
+
   return (
     <div className='dg-select-container' ref={wrapperRef}>
-      {label && <span className='dg-select-label'>{label}</span>}
+      {label && <span className={selectLabelClasses}>{label}</span>}
       <select
         {...props}
         value={selectVal}
