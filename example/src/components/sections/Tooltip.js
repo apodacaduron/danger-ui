@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tooltip, Badge } from 'danger-ui'
+import { Tooltip } from 'danger-ui'
 
 const TooltipComponent = () => {
   return (
