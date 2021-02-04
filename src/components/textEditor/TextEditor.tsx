@@ -37,7 +37,7 @@ const TextEditor: FC<IProps> = ({ value = '', onSubmit, onChange }) => {
           'clear'
         ]}
         language='en'
-        value={editorState}
+        defaultValue={editorState}
         onChange={handleEditorChange}
         onSave={submitContent}
       />

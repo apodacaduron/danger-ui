@@ -1,12 +1,12 @@
-import { ChangeEvent, FocusEvent, ReactNode } from 'react'
+import { ChangeEvent, FocusEvent, ReactNode, InputHTMLAttributes } from 'react'
 
-interface InputProps {
-  disabled?: boolean
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  disabled: boolean
   design?: string
   radius?: number
   animated?: boolean
-  placeholder?: string
-  value?: string
+  placeholder: string
+  value: string
   onChange?: (value: ChangeEvent<HTMLInputElement>) => void
   onFocus?: (value: FocusEvent<HTMLInputElement>) => void
   onBlur?: (value: FocusEvent<HTMLInputElement>) => void
