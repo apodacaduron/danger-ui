@@ -21,6 +21,9 @@ const Input: FC<InputProps> = ({
   const [focus, setFocus] = useState(() =>
     props.value || props.defaultValue ? true : false
   )
+  const [currentValue, setCurrentValue] = useState(
+    () => props.value || props.defaultValue
+  )
   const [inputBox, setInputBox] = useState<HTMLInputElement | null>()
 
   useEffect(() => {
@@ -86,6 +89,7 @@ const Input: FC<InputProps> = ({
         <span className={labelClasses}>{placeholder}</span>
         <input
           {...props}
+          value={currentValue}
           ref={setInputBox}
           onChange={addInputChange}
           onFocus={addInputFocus}
