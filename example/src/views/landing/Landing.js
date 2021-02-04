@@ -14,6 +14,7 @@ import TabsComponent from '../../components/sections/Tabs'
 import DatePickerComponent from '../../components/sections/DatePicker'
 import DropdownMenuComponent from '../../components/sections/DropdownMenu'
 import ExpandableComponent from '../../components/sections/Expandable'
+import TooltipComponent from '../../components/sections/Tooltip'
 
 import './Landing.css'
 
@@ -36,6 +37,7 @@ const Landing = () => {
         <DatePickerComponent />
         <DropdownMenuComponent />
         <ExpandableComponent />
+        <TooltipComponent />
       </div>
     </div>
   )

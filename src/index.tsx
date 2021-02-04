@@ -31,6 +31,7 @@ import {
   ScreenClassProvider,
   ScreenClassRender
 } from 'components/grid/Grid'
+import Tooltip from 'components/tooltip/Tooltip'
 
 import './styles.sass'
 
@@ -65,5 +66,6 @@ export {
   Visible,
   Hidden,
   ScreenClassProvider,
-  ScreenClassRender
+  ScreenClassRender,
+  Tooltip
 }

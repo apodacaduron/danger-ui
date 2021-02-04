@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, FocusEvent, useState } from 'react'
+import React, { ChangeEvent, FC, FocusEvent, useState, useEffect } from 'react'
 import { InputProps } from 'utils/interfaces'
 import classNames from 'classnames'
 
@@ -21,6 +21,10 @@ const Input: FC<InputProps> = ({
 }) => {
   const [focus, setFocus] = useState(() => (value ? true : false))
   const [inputBox, setInputBox] = useState<HTMLInputElement | null>()
+
+  useEffect(() => {
+    setFocus(value ? true : false)
+  }, [value])
 
   const isFocused = (_focused: boolean) => {
     if (_focused) {
