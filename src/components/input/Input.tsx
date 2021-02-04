@@ -39,6 +39,7 @@ const Input: FC<InputProps> = ({
   }
 
   const addInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setCurrentValue(event.target.value)
     onChange && onChange(event)
   }
 
