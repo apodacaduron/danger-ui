@@ -10,6 +10,7 @@ const Input: FC<InputProps> = ({
   radius = 4,
   animated = true,
   placeholder = '',
+  value = '',
   onChange,
   onFocus,
   onBlur,
@@ -18,28 +19,22 @@ const Input: FC<InputProps> = ({
   dangerText,
   ...props
 }) => {
-  const [focus, setFocus] = useState(() =>
-    props.value || props.defaultValue ? true : false
-  )
-  const [currentValue, setCurrentValue] = useState(
-    () => props.value || props.defaultValue
-  )
+  const [focus, setFocus] = useState(() => (value ? true : false))
   const [inputBox, setInputBox] = useState<HTMLInputElement | null>()
 
   useEffect(() => {
-    setFocus(props.value || props.defaultValue ? true : false)
-  }, [props.value, props.defaultValue])
+    setFocus(value ? true : false)
+  }, [value])
 
   const isFocused = (_focused: boolean) => {
     if (_focused) {
       setFocus(_focused)
     } else {
-      !(props.value || props.defaultValue) && setFocus(_focused)
+      !value && setFocus(_focused)
     }
   }
 
   const addInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setCurrentValue(event.target.value)
     onChange && onChange(event)
   }
 
@@ -65,7 +60,7 @@ const Input: FC<InputProps> = ({
 
   const labelClasses = classNames({
     'dg-input-text': true,
-    'dg-hide': !animated && (props.value || props.defaultValue),
+    'dg-hide': !animated && value,
     'dg-placeholder-danger': danger,
     'dg-label': focus && animated,
     'dg-danger-text': focus && animated && danger,
@@ -90,7 +85,7 @@ const Input: FC<InputProps> = ({
         <span className={labelClasses}>{placeholder}</span>
         <input
           {...props}
-          value={currentValue}
+          value={value}
           ref={setInputBox}
           onChange={addInputChange}
           onFocus={addInputFocus}
