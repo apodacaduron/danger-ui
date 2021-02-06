@@ -19,6 +19,7 @@ const Input: FC<InputProps> = ({
   dangerText,
   ...props
 }) => {
+  const [currentValue, setCurrentValue] = useState(() => value)
   const [focus, setFocus] = useState(() => (value ? true : false))
   const [inputBox, setInputBox] = useState<HTMLInputElement | null>()
 
@@ -35,6 +36,7 @@ const Input: FC<InputProps> = ({
   }
 
   const addInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setCurrentValue(event.target.value)
     onChange && onChange(event)
   }
 
@@ -85,7 +87,7 @@ const Input: FC<InputProps> = ({
         <span className={labelClasses}>{placeholder}</span>
         <input
           {...props}
-          value={value}
+          value={currentValue}
           ref={setInputBox}
           onChange={addInputChange}
           onFocus={addInputFocus}
