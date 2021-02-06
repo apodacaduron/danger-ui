@@ -25,6 +25,7 @@ const Input: FC<InputProps> = ({
 
   useEffect(() => {
     setFocus(value ? true : false)
+    setCurrentValue(value)
   }, [value])
 
   const isFocused = (_focused: boolean) => {
