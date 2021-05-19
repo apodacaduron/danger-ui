@@ -1,0 +1,18 @@
+.list-item-container {
+  @apply w-full px-4;
+  &--rounded {
+    @apply rounded-md;
+  }
+  &--border-left {
+    @apply border-brand-dark border-l-2;
+  }
+  &--border-right {
+    @apply border-brand-dark border-l-2;
+  }
+  &__button {
+    @apply w-full text-left;
+  }
+  &:hover {
+    @apply bg-brand bg-opacity-20 transition-all;
+  }
+}

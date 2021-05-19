@@ -1,0 +1,9 @@
+.card {
+  @apply rounded-md bg-white border border-transparent;
+  &--border {
+    @apply border border-gray-200;
+  }
+  &--shadow {
+    @apply shadow-md;
+  }
+}
