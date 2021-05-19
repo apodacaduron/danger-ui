@@ -1,6 +1,6 @@
 .button {
   &:focus {
-    @apply ring-4 ring-brand ring-opacity-50;
+    @apply ring-4 ring-brand ring-opacity-50 outline-none;
   }
   &--solid {
     @apply bg-brand text-white rounded-md px-4 py-2;
