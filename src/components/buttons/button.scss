@@ -1,0 +1,20 @@
+.button {
+  &:focus {
+    @apply ring-4 ring-brand ring-opacity-50;
+  }
+  &--solid {
+    @apply bg-brand text-white rounded-md px-4 py-2;
+  }
+  &--outline {
+    @apply border border-brand text-brand rounded-md px-4 py-2;
+  }
+  &--icon {
+    @apply bg-transparent;
+  }
+  &--flat {
+    @apply text-brand;
+  }
+  &--round {
+    @apply bg-brand text-white rounded-full;
+  }
+}

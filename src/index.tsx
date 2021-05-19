@@ -1,71 +1,19 @@
-import Button from './components/button/Button'
-import Input from './components/input/Input'
-import Avatar from './components/avatar/Avatar'
-import Table from './components/table/Table'
-import Badge from './components/badge/Badge'
-import Spinner from './components/spinner/Spinner'
-import Select from './components/select/Select'
-import { ToastContainer, toast } from './components/alert/Alert'
-import Modal from './components/modal/Modal'
-import FormGroup from './components/formGroup/FormGroup'
-import TextEditor from './components/textEditor/TextEditor'
-import { Tabs, TabList, Tab, TabPanel } from './components/tabs/Tabs'
-import {
-  Calendar,
-  DatePicker,
-  RangeDatePicker
-} from './components/datePicker/DatePicker'
-import {
-  Menu,
-  MenuItem,
-  MenuButton,
-  SubMenu
-} from './components/dropdownMenu/DropdownMenu'
-import Expandable from './components/expandable/Expandable'
-import {
-  Container,
-  Row,
-  Col,
-  Visible,
-  Hidden,
-  ScreenClassProvider,
-  ScreenClassRender
-} from 'components/grid/Grid'
-import Tooltip from 'components/tooltip/Tooltip'
+import './index.css';
 
-import './styles.sass'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-export {
-  Button,
-  Input,
-  Avatar,
-  Table,
-  Badge,
-  Spinner,
-  Select,
-  ToastContainer,
-  toast,
-  Modal,
-  FormGroup,
-  TextEditor,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanel,
-  Calendar,
-  DatePicker,
-  RangeDatePicker,
-  Menu,
-  MenuItem,
-  MenuButton,
-  SubMenu,
-  Expandable,
-  Container,
-  Row,
-  Col,
-  Visible,
-  Hidden,
-  ScreenClassProvider,
-  ScreenClassRender,
-  Tooltip
-}
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+)
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals()
