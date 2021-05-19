@@ -1,7 +1,16 @@
 {
   "name": "danger-ui",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.12",
+  "description": "Danger UI React Components",
+  "author": "apodacaduron",
+  "license": "MIT",
+  "repository": "https://github.com/apodacaduron/danger-ui",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.tsx",
+  "engines": {
+    "node": ">=10"
+  },
   "dependencies": {
     "@craco/craco": "^6.1.2",
     "@testing-library/jest-dom": "^5.11.4",
