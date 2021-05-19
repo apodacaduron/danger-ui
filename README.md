@@ -1,166 +1,46 @@
-# danger-ui
+# Getting Started with Create React App
 
-> Danger UI React Components
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[![NPM](https://img.shields.io/npm/v/danger-ui.svg)](https://www.npmjs.com/package/danger-ui) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+## Available Scripts
 
-## Install
+In the project directory, you can run:
 
-```bash
-npm install --save danger-ui
-```
+### `yarn start`
 
-## Components
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- [Button](#button)
-- [Input](#input)
-- [Avatar](#avatar)
-- [Spinner](#spinner)
-- [Table](#table)
-- [Badge](#badge)
-- [Select](#select)
-- [Alert](#alert)
-- [Modal](#modal)
-- [FormGroup](#form-group)
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Usage
+### `yarn test`
 
-```jsx
-import React from 'react'
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-import { MyComponent } from 'danger-ui'
-import 'danger-ui/dist/index.css'
+### `yarn build`
 
-const Example = () => {
-  return <MyComponent />
-}
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Button
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-**Props**
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-| Property   | Type       | Values                                           | Description                                | Default   |
-| ---------- | ---------- | ------------------------------------------------ | ------------------------------------------ | --------- |
-| `disabled` | `boolean`  | `true` `false`                                   | Button can be disabled when true           | `false`   |
-| `design`   | `string`   | `regular` `light` `round` `transparent` `border` | Different styles for single component      | `regular` |
-| `radius`   | `number`   | 0 - 50                                           | Border radius                              | `10`      |
-| `loading`  | `boolean`  | `true` `false`                                   | Disables button and show loading when true | `false`   |
-| `onClick`  | `function` |                                                  | Triggers function passed                   |           |
-| `block`    | `boolean`  | `true` `false`                                   | Makes width 100%                           | `false`   |
+### `yarn eject`
 
-## Input
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-**Props**
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-| Property      | Type                      | Values                  | Description                                          | Default |
-| ------------- | ------------------------- | ----------------------- | ---------------------------------------------------- | ------- |
-| `disabled`    | `boolean`                 | `true` `false`          | Button can be disabled when true                     | `false` |
-| `design`      | `string`                  | `line` `solid` `border` | Different styles for single component                | `solid` |
-| `radius`      | `number`                  | 0 - 50                  | Border radius                                        | `10`    |
-| `animated`    | `boolean`                 | `true` `false`          | Animates label on focus if true                      | `false` |
-| `placeholder` | `string`                  |                         | Sets a placeholder text, if animated becomes a label |         |
-| `value`       | `string``boolean``number` |                         | Sets input value                                     |         |
-| `onChange`    | `function`                |                         |                                                      |         |
-| `onFocus`     | `function`                |                         |                                                      |         |
-| `onBlur`      | `function`                |                         |                                                      |         |
-| `danger`      | `boolean`                 | `true``false`           | Turns de input red                                   | `false` |
-| `dangerText`  | `string`                  |                         | Adds text under input                                |         |
-| `block`       | `boolean`                 | `true``false`           | Sets the input to full width                         | `false` |
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-## Avatar
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-**Props**
+## Learn More
 
-| Property        | Type          | Values         | Description                                                    | Default      |
-| --------------- | ------------- | -------------- | -------------------------------------------------------------- | ------------ |
-| `size`          | `number`      |                | Changes dimensions of element                                  | `40`         |
-| `radius`        | `number`      | 0 - 50         | Border radius                                                  | `10`         |
-| `src`           | `string`      | `true` `false` | URL to show avatar                                             | `false`      |
-| `defaultAvatar` | `string`      |                | URL from a default image                                       | Gravatar url |
-| `alt`           | `string`      |                | Adds alt to img element                                        |              |
-| `color`         | `string`      |                | Can take a color code, or use primary color from css variables | `primary`    |
-| `~~border~~`    | `~~boolean~~` |                | ~~Not implemented yet~~                                        |              |
-| `text`          | `string`      |                | If theres no src added it will show 2 characters               |              |
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Spinner
-
-**Props**
-
-| Property | Type     | Values | Description                   | Default |
-| -------- | -------- | ------ | ----------------------------- | ------- |
-| `size`   | `number` |        | Changes dimensions of element | `20`    |
-| `width`  | `number` |        | Changes dimensions of element | `1`     |
-
-## Table
-
-**Props**
-
-| Property  | Type    | Values | Description                              | Default |
-| --------- | ------- | ------ | ---------------------------------------- | ------- |
-| `columns` | `array` | []     | Maps array and prints it on table header |         |
-| `body`    |         | jsx    | Pass rows for table                      |         |
-
-## Badge
-
-**Props**
-
-| Property | Type | Values | Description      | Default |
-| -------- | ---- | ------ | ---------------- | ------- |
-| `text`   |      |        | Pass jsx or text |         |
-
-## Select
-
-**Props**
-
-| Property      | Type                      | Values                       | Description                                                    | Default |
-| ------------- | ------------------------- | ---------------------------- | -------------------------------------------------------------- | ------- |
-| `disabled`    | `boolean`                 | `true` `false`               | Button can be disabled when true                               | `false` |
-| `design`      | `string`                  | `line` `solid` `border`      | Different styles for single component                          | `solid` |
-| `radius`      | `number`                  | 0 - 50                       | Border radius                                                  | `10`    |
-| `animated`    | `boolean`                 | `true` `false`               | Animates label on focus if true                                | `false` |
-| `placeholder` | `string`                  |                              | Sets a placeholder text, if animated becomes a label           |         |
-| `value`       | `string``boolean``number` |                              | Sets select value                                              |         |
-| `data`        | `array`                   | [{ option: 'Foo', value: 1}] | Takes an array of objects with properties `option` and `value` |         |
-| `onChange`    | `function`                |                              |                                                                |         |
-| `onFocus`     | `function`                |                              |                                                                |         |
-| `onBlur`      | `function`                |                              |                                                                |         |
-| `danger`      | `boolean`                 | ` true``false `              | Turns de input red                                             | `false` |
-| `dangerText`  | `string`                  |                              | Adds text under input                                          |         |
-| `block`       | `boolean`                 | ` true``false `              | Sets the input to full width                                   | `false` |
-
-## Alert
-
-**Props**
-
-| Property   | Type       | Values                                                                      | Description                                                | Default      |
-| ---------- | ---------- | --------------------------------------------------------------------------- | ---------------------------------------------------------- | ------------ |
-| `children` | `jsx`      |                                                                             | Takes in any jsx element                                   |              |
-| `color`    | `string`   |                                                                             | If not set will use primary color, or use any color format | `primary`    |
-| `position` | `string`   | `top-left``top-center``top-right``bottom-left``bottom-center``bottom-right` | Changes position of alert on the screen                    | `top-center` |
-| `visible`  | `boolean`  | `true``false`                                                               | Displays the alert                                         | `false`      |
-| `onClick`  | `function` |                                                                             | Execute passed function                                    |              |
-
-## Modal
-
-**Props**
-
-| Property     | Type       | Values        | Description                                                | Default |
-| ------------ | ---------- | ------------- | ---------------------------------------------------------- | ------- |
-| `visible`    | `boolean`  | `true``false` | Displays the modal component                               | `false` |
-| `header`     | `jsx`      |               | Displays on top of modal component                         |         |
-| `footer`     | `jsx`      |               | Displays in bottom of modal component                      |         |
-| `children`   | `jsx`      |               | Display on the center of modal component                   |         |
-| `onClickOut` | `function` |               | Executes function when click background of modal component |         |
-
-## FormGroup
-
-**Props**
-
-| Property   | Type  | Values | Description              | Default |
-| ---------- | ----- | ------ | ------------------------ | ------- |
-| `children` | `jsx` |        | Takes in any jsx element |         |
-
-## License
-
-MIT © [apodacaduron](https://github.com/apodacaduron)
+To learn React, check out the [React documentation](https://reactjs.org/).
